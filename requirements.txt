@@ -1,0 +1,10 @@
+requests
+tenacity
+tqdm
+pandas
+pyarrow
+pydantic
+python-dateutil
+beautifulsoup4
+lxml
+playwright

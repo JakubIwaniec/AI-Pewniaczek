@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/football_ai/__init__.py
+src/football_ai/__main__.py
+src/football_ai/cli.py
+src/football_ai/http.py
+src/football_ai/paths.py
+src/football_ai/storage.py
+src/football_ai.egg-info/PKG-INFO
+src/football_ai.egg-info/SOURCES.txt
+src/football_ai.egg-info/dependency_links.txt
+src/football_ai.egg-info/top_level.txt
+src/football_ai/sources/flashscore.py
+src/football_ai/sources/flashscore_feed_parse.py
+src/football_ai/sources/flashscore_playwright.py
+src/football_ai/sources/football_data.py
