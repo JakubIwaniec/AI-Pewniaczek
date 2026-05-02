@@ -167,6 +167,18 @@ def build_parser() -> argparse.ArgumentParser:
     )
     harvest.add_argument("--force", action="store_true", help="Ignore cache and re-download")
 
+    backfill_li = sub.add_parser(
+        "backfill-flashscore-lineups",
+        help="Download df_li (lineup) feeds for existing eventIds",
+    )
+    backfill_li.add_argument(
+        "--event-ids-file", required=True, help="Path to event_ids .txt file"
+    )
+    backfill_li.add_argument(
+        "--out-subdir", required=True, help="Match subdir under data/raw/flashscore/"
+    )
+    backfill_li.add_argument("--force", action="store_true", help="Ignore cache")
+
     return p
 
 
@@ -320,7 +332,7 @@ def main(argv: list[str] | None = None) -> int:
         http.min_delay_s = max(http.min_delay_s, 2.0)
 
         for eid in event_ids:
-            for match_feed in (f"df_sui_1_{eid}", f"df_st_1_{eid}"):
+            for match_feed in (f"df_sui_1_{eid}", f"df_st_1_{eid}", f"df_li_1_{eid}"):
                 download_feed_raw(
                     storage=storage,
                     http=http,
@@ -328,6 +340,30 @@ def main(argv: list[str] | None = None) -> int:
                     subdir=f"{args.out_subdir}/{eid}",
                     force=args.force,
                 )
+        return 0
+
+    if args.cmd == "backfill-flashscore-lineups":
+        http.min_delay_s = max(http.min_delay_s, 2.0)
+        ids_path = Path(args.event_ids_file)
+        if not ids_path.exists():
+            raise SystemExit(f"Event IDs file not found: {ids_path}")
+        event_ids = [
+            line.strip()
+            for line in ids_path.read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        print(f"Backfilling df_li for {len(event_ids)} events -> {args.out_subdir}")
+        for i, eid in enumerate(event_ids, 1):
+            download_feed_raw(
+                storage=storage,
+                http=http,
+                feed=f"df_li_1_{eid}",
+                subdir=f"{args.out_subdir}/{eid}",
+                force=args.force,
+            )
+            if i % 50 == 0:
+                print(f"  ... {i}/{len(event_ids)}")
+        print(f"Done: {len(event_ids)} lineup feeds.")
         return 0
 
     raise SystemExit(f"Unknown command: {args.cmd}")
