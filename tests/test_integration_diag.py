@@ -24,6 +24,7 @@ class TestIntegrationDiag(unittest.TestCase):
             "ids_in_join_scope",
             "ids_never_attempted_join",
             "skipped_no_meta_by_dataset",
+            "skipped_no_meta_event_id_sample_by_dataset",
             "supplement_counters",
             "meta_state_per_event_aggregate",
             "kickoff_aggregate_global",
@@ -50,6 +51,15 @@ class TestIntegrationDiag(unittest.TestCase):
         sum_scope = sum(int(rec["in_join_scope_events"]) for rec in skipped_ds.values())  # type: ignore[arg-type]
         self.assertEqual(sum_miss, sc["skipped_no_meta"])
         self.assertEqual(sum_scope, d["ids_in_join_scope"])
+        sns = d["skipped_no_meta_event_id_sample_by_dataset"]
+        self.assertIsInstance(sns, dict)
+        sampled_ids = sum(
+            len(lst) if isinstance(lst, list) else 0 for lst in sns.values()
+        )
+        self.assertLessEqual(sampled_ids, int(sc["skipped_no_meta"]))  # capped per ds
+        for lst in sns.values():
+            if isinstance(lst, list):
+                self.assertLessEqual(len(lst), 24)
         for rec in skipped_ds.values():
             self.assertIn("missing_meta", rec)
             self.assertIn("in_join_scope_events", rec)

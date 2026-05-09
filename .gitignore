@@ -11,3 +11,6 @@ data/*.db
 data/*.db-journal
 *.log
 *.tmp
+# Playwright / lokalny profil przeglądarki (cookies, cache) — nie wersjonuj
+data/flashscore_profile/
+data/flashscore_debug/

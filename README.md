@@ -62,3 +62,16 @@ python -m football_ai --help
 ### Uwaga dot. Flashscore
 Flashscore może stosować zabezpieczenia anty-bot. Kod jest przygotowany pod cache, retry i wznawianie, ale scraper może wymagać dopracowania (np. Playwright) zależnie od zmian na stronie.
 
+**Profil przeglądarki (Playwright)** domyślnie trafia do `data/flashscore_profile/` (oraz pomocnicze zrzuty w `data/flashscore_debug/`). Katalogi te są **poza Gitem** (`.gitignore`) — mogą zawierać cookies i cache; pierwszy run harvestu lub scrapera je utworzy lokalnie. Szerszy kontekst operacyjny: [`docs/DATA_GAP_PROTOCOL.md`](docs/DATA_GAP_PROTOCOL.md).
+
+#### Tier‑1: próbka ``event_id`` przy braku meta (RAW gate)
+
+Po regressji integracji sprawdź, czy brak meta nie wynika z tego, że ID nie ma w pobranych listach RAW:
+
+```bash
+python scripts/integration_diag.py -F --skip-lookup-miss-sample --footballcsv-cache-fallback
+python scripts/meta_gap_event_id_sample.py --dataset np.laliga-2526
+```
+
+Następnie literalne wyszukiwanie w feedach (z korzenia repo): `grep -rF "<event_id>" data/raw/flashscore/feeds` (Linux/macOS) lub analog w PowerShell; patrz także [TARGET_SPEC.md](docs/TARGET_SPEC.md) (Tier‑1).
+

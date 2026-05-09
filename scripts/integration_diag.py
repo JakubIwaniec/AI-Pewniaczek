@@ -4,6 +4,8 @@ Writes ``data/integrated/integration_diag_latest.json``. JSON uses ``schema_vers
 
 - ``skipped_no_meta_by_dataset``: per ``dataset_label`` with join-scope CSV —
   ``missing_meta`` (aligned with aggregate ``supplement_counters.skipped_no_meta``),
+  plus ``skipped_no_meta_event_id_sample_by_dataset``: per ``dataset_label`` capped list of
+  ``event_id`` for Tier‑1 RAW gate (presence in mega-list files).
   ``in_join_scope_events``, and ``share`` (ratio, or JSON ``null`` if denominator zero).
 
 When Football-Data lookups miss despite a valid unix on an in-scope IDS event, annotates extras:
@@ -89,6 +91,7 @@ DEFAULT_LM_SEED = 42
 _KICKOFF_OK_THRESHOLD = 1_000_000_000
 _FORENSICS_MAX_BYTES = 65_536
 _FORENSICS_TARGET_SAMPLES = 8
+_SKIPPED_NO_META_EID_SAMPLE_CAP_PER_DS = 24
 
 
 def split_dataset(ds: str) -> tuple[str, str]:
@@ -289,6 +292,7 @@ def run_diag(
 
     league_rows: list[dict[str, object]] = []
     forensics_samples: list[dict[str, object]] = []
+    skipped_no_meta_eid_samples: defaultdict[str, list[str]] = defaultdict(list)
 
     def try_forensics(rel_path: str, blob: bytes) -> None:
         if len(forensics_samples) >= _FORENSICS_TARGET_SAMPLES:
@@ -424,6 +428,9 @@ def run_diag(
             if meta is None:
                 skipped_no_meta += 1
                 missing_meta_by_ds[dlabel] += 1
+                sm = skipped_no_meta_eid_samples[dlabel]
+                if len(sm) < _SKIPPED_NO_META_EID_SAMPLE_CAP_PER_DS:
+                    sm.append(eid)
                 kickoff_by_dataset[dlabel]["absent_key"] += 1
                 continue
             if not _kickoff_ok(meta.unix_kickoff):
@@ -589,6 +596,9 @@ def run_diag(
         "meta_state_per_event_aggregate": dict(global_kick),
         "kickoff_aggregate_global": global_kick,
         "skipped_no_meta_by_dataset": skipped_no_meta_by_ds_out,
+        "skipped_no_meta_event_id_sample_by_dataset": {
+            k: v for k, v in sorted(skipped_no_meta_eid_samples.items()) if v
+        },
         "kickoff_histogram_by_dataset": {k: dict(v) for k, v in sorted(kickoff_by_dataset.items())},
         "league_join_scope_table": league_rows,
         "ids_never_attempted_dataset_labels": sorted(never_attempted_dataset_labels),

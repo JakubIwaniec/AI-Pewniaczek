@@ -14,7 +14,7 @@ Uruchomić z korzenia repo. W notatce lub w kolumnie „Replay’’ w TARGET_SP
 
 | Artefakt | Narzędzie | Kluczowe pola |
 |----------|-----------|----------------|
-| Meta / join przy CSV | [integration_diag.py](../scripts/integration_diag.py) → `integration_diag_latest.json` | `skipped_no_meta`, `skipped_no_meta_by_dataset`, `ids_never_attempted_join`, `league_join_scope_table`, `kickoff_aggregate_global`; z `-F` → `lookup_miss_category_histogram_by_dataset` |
+| Meta / join przy CSV | [integration_diag.py](../scripts/integration_diag.py) → `integration_diag_latest.json` | `skipped_no_meta`, `skipped_no_meta_event_id_sample_by_dataset` (**próbka ID dla RAW gate**), `skipped_no_meta_by_dataset`, `ids_never_attempted_join`, `league_join_scope_table`, `kickoff_aggregate_global`; z `-F` → `lookup_miss_category_histogram_by_dataset` |
 | Enrichment manifest | [model_input_coverage.py](../scripts/model_input_coverage.py) | `model_input_coverage_latest.json` — **po** świeżym [build_integration_supplement.py](../scripts/build_integration_supplement.py) |
 | KPI kubków / domestic RAW | [integration_coverage.py](../scripts/integration_coverage.py) | `coverage_latest.json` — nie zlewaj automatycznie z `model_input_coverage` |
 | Spójność IDS | [data_integrity_flashscore.py](../scripts/data_integrity_flashscore.py) | brak `/ puste pliki IDS` |
@@ -33,6 +33,10 @@ Przy wyłącznie `--skip-lookup-miss-sample` nie oczekuj sensownego `lookup_miss
 ### Baseline — zamroź `footballcsv_cache_fallback`
 
 Nie przełączaj `options.footballcsv_cache_fallback` między „przed/po’’ przy porównaniu `join_would_succeed_count` bez jawnego eksperymentu.
+
+### Tier‑1 (brak meta) — próbka `event_id` do RAW gate
+
+Po świeżym regressie (`-F`) użyj [meta_gap_event_id_sample.py](../scripts/meta_gap_event_id_sample.py), żeby wypisać `event_id` z `skipped_no_meta_event_id_sample_by_dataset`; potem sprawdź literalnie w `data/raw/flashscore/feeds/*.txt`. Jeśli pola brak lub jest puste mimo dużego `skipped_no_meta` — uruchom ponownie najnowszy `integration_diag.py`.
 
 ---
 
