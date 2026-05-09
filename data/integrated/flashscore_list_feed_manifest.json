@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "description": "Kilka wariantów mega-listy x/feed (różnice numerów zamiast locales) scala się w większą unię bloków AA. Wyższe priority → plik wczytywany później (nadpisuje kolizje). Dla CL/UEFA mega-listy i tak są ubogie — dopisz własne feed_key lub skorzystaj z football_ai download-flashscore-from-feed i zapisz RAW .txt pod feeds/.",
+  "wildcard_priority": 55,
+  "download": [
+    {
+      "feed_key": "f_1_-1_0_pl_1",
+      "filename": null,
+      "priority": 41,
+      "tags": ["mega", "variant"]
+    },
+    {
+      "feed_key": "f_1_-1_1_pl_1",
+      "filename": null,
+      "priority": 42,
+      "tags": ["mega", "variant"]
+    },
+    {
+      "feed_key": "f_1_-1_2_pl_1",
+      "filename": null,
+      "priority": 43,
+      "tags": ["mega", "variant"]
+    },
+    {
+      "feed_key": "f_1_-1_3_en_1",
+      "filename": null,
+      "priority": 44,
+      "tags": ["mega", "variant", "en_locale"]
+    },
+    {
+      "feed_key": "f_1_-1_3_pl_1",
+      "filename": null,
+      "priority": 50,
+      "tags": ["mega", "variant", "pl_locale"]
+    }
+  ],
+  "include_feed_subdir_globs": ["**/*.txt"]
+}

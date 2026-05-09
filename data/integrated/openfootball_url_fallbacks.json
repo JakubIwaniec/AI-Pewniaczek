@@ -1,0 +1,10 @@
+{
+  "2025-26": {
+    "el": [
+      "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/elq.txt"
+    ],
+    "conf": [
+      "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/confq.txt"
+    ]
+  }
+}

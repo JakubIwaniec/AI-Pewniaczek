@@ -1,0 +1,2068 @@
+{
+  "schema_version": "4",
+  "generated_at": "2026-05-09T22:19:36Z",
+  "git_rev_short": "b48273c",
+  "options": {
+    "footballcsv_cache_fallback": true,
+    "lookup_miss_sample_size": 200,
+    "lookup_miss_seed": 42,
+    "skip_lookup_miss_sample": true,
+    "lookup_miss_classify_full_population": true,
+    "lookup_miss_diagnostic_radius_days": 7
+  },
+  "meta_fingerprint_summary": {
+    "feed_note": "manifest_wild=55_count=5",
+    "augment_seed_count": 6716,
+    "feeds_used_count": 5,
+    "meta_index_size": 7112
+  },
+  "ids_total_manifest_events": 12141,
+  "ids_in_join_scope": 6424,
+  "ids_never_attempted_join": 5717,
+  "supplement_counters": {
+    "skipped_no_meta": 5425,
+    "skipped_no_row": 982,
+    "skipped_no_row_build_semantics": 982,
+    "breakdown_in_scope": {
+      "meta_no_valid_unix_attempted_lookup": 0,
+      "lookup_miss_given_valid_unix": 982
+    },
+    "join_would_succeed_count": 17
+  },
+  "meta_state_per_event_aggregate": {
+    "absent_key": 5425,
+    "present_no_valid_unix": 0,
+    "present_unix_ok": 6716
+  },
+  "kickoff_aggregate_global": {
+    "absent_key": 5425,
+    "present_no_valid_unix": 0,
+    "present_unix_ok": 6716
+  },
+  "skipped_no_meta_by_dataset": {
+    "bundesliga-2223": {
+      "missing_meta": 103,
+      "in_join_scope_events": 103,
+      "share": 1.0
+    },
+    "bundesliga-2324": {
+      "missing_meta": 104,
+      "in_join_scope_events": 104,
+      "share": 1.0
+    },
+    "bundesliga-2425": {
+      "missing_meta": 104,
+      "in_join_scope_events": 104,
+      "share": 1.0
+    },
+    "bundesliga-2526": {
+      "missing_meta": 149,
+      "in_join_scope_events": 149,
+      "share": 1.0
+    },
+    "carabao_cup-2223": {
+      "missing_meta": 0,
+      "in_join_scope_events": 93,
+      "share": 0.0
+    },
+    "carabao_cup-2324": {
+      "missing_meta": 0,
+      "in_join_scope_events": 93,
+      "share": 0.0
+    },
+    "carabao_cup-2425": {
+      "missing_meta": 0,
+      "in_join_scope_events": 93,
+      "share": 0.0
+    },
+    "carabao_cup-2526": {
+      "missing_meta": 0,
+      "in_join_scope_events": 93,
+      "share": 0.0
+    },
+    "chance_liga-2223": {
+      "missing_meta": 107,
+      "in_join_scope_events": 107,
+      "share": 1.0
+    },
+    "chance_liga-2324": {
+      "missing_meta": 108,
+      "in_join_scope_events": 108,
+      "share": 1.0
+    },
+    "chance_liga-2425": {
+      "missing_meta": 105,
+      "in_join_scope_events": 105,
+      "share": 1.0
+    },
+    "chance_liga-2526": {
+      "missing_meta": 124,
+      "in_join_scope_events": 124,
+      "share": 1.0
+    },
+    "ekstraklasa-2223": {
+      "missing_meta": 104,
+      "in_join_scope_events": 104,
+      "share": 1.0
+    },
+    "ekstraklasa-2324": {
+      "missing_meta": 105,
+      "in_join_scope_events": 105,
+      "share": 1.0
+    },
+    "ekstraklasa-2425": {
+      "missing_meta": 106,
+      "in_join_scope_events": 106,
+      "share": 1.0
+    },
+    "ekstraklasa-2526": {
+      "missing_meta": 0,
+      "in_join_scope_events": 159,
+      "share": 0.0
+    },
+    "eredivisie-2223": {
+      "missing_meta": 108,
+      "in_join_scope_events": 108,
+      "share": 1.0
+    },
+    "eredivisie-2324": {
+      "missing_meta": 104,
+      "in_join_scope_events": 104,
+      "share": 1.0
+    },
+    "eredivisie-2425": {
+      "missing_meta": 104,
+      "in_join_scope_events": 104,
+      "share": 1.0
+    },
+    "eredivisie-2526": {
+      "missing_meta": 136,
+      "in_join_scope_events": 136,
+      "share": 1.0
+    },
+    "fa_cup-2223": {
+      "missing_meta": 0,
+      "in_join_scope_events": 106,
+      "share": 0.0
+    },
+    "fa_cup-2324": {
+      "missing_meta": 0,
+      "in_join_scope_events": 109,
+      "share": 0.0
+    },
+    "fa_cup-2425": {
+      "missing_meta": 0,
+      "in_join_scope_events": 123,
+      "share": 0.0
+    },
+    "fa_cup-2526": {
+      "missing_meta": 0,
+      "in_join_scope_events": 130,
+      "share": 0.0
+    },
+    "jupiler_league-2223": {
+      "missing_meta": 109,
+      "in_join_scope_events": 109,
+      "share": 1.0
+    },
+    "jupiler_league-2324": {
+      "missing_meta": 104,
+      "in_join_scope_events": 104,
+      "share": 1.0
+    },
+    "jupiler_league-2425": {
+      "missing_meta": 109,
+      "in_join_scope_events": 109,
+      "share": 1.0
+    },
+    "jupiler_league-2526": {
+      "missing_meta": 141,
+      "in_join_scope_events": 141,
+      "share": 1.0
+    },
+    "laliga-2223": {
+      "missing_meta": 105,
+      "in_join_scope_events": 105,
+      "share": 1.0
+    },
+    "laliga-2324": {
+      "missing_meta": 106,
+      "in_join_scope_events": 106,
+      "share": 1.0
+    },
+    "laliga-2425": {
+      "missing_meta": 107,
+      "in_join_scope_events": 107,
+      "share": 1.0
+    },
+    "laliga-2526": {
+      "missing_meta": 176,
+      "in_join_scope_events": 176,
+      "share": 1.0
+    },
+    "liga_portugal-2223": {
+      "missing_meta": 105,
+      "in_join_scope_events": 105,
+      "share": 1.0
+    },
+    "liga_portugal-2324": {
+      "missing_meta": 103,
+      "in_join_scope_events": 103,
+      "share": 1.0
+    },
+    "liga_portugal-2425": {
+      "missing_meta": 106,
+      "in_join_scope_events": 106,
+      "share": 1.0
+    },
+    "liga_portugal-2526": {
+      "missing_meta": 154,
+      "in_join_scope_events": 154,
+      "share": 1.0
+    },
+    "ligue_1-2223": {
+      "missing_meta": 109,
+      "in_join_scope_events": 109,
+      "share": 1.0
+    },
+    "ligue_1-2324": {
+      "missing_meta": 109,
+      "in_join_scope_events": 109,
+      "share": 1.0
+    },
+    "ligue_1-2425": {
+      "missing_meta": 108,
+      "in_join_scope_events": 108,
+      "share": 1.0
+    },
+    "ligue_1-2526": {
+      "missing_meta": 134,
+      "in_join_scope_events": 134,
+      "share": 1.0
+    },
+    "premier_league-2223": {
+      "missing_meta": 103,
+      "in_join_scope_events": 103,
+      "share": 1.0
+    },
+    "premier_league-2324": {
+      "missing_meta": 103,
+      "in_join_scope_events": 103,
+      "share": 1.0
+    },
+    "premier_league-2425": {
+      "missing_meta": 109,
+      "in_join_scope_events": 109,
+      "share": 1.0
+    },
+    "premier_league-2526": {
+      "missing_meta": 168,
+      "in_join_scope_events": 168,
+      "share": 1.0
+    },
+    "serie_a-2223": {
+      "missing_meta": 103,
+      "in_join_scope_events": 103,
+      "share": 1.0
+    },
+    "serie_a-2324": {
+      "missing_meta": 105,
+      "in_join_scope_events": 105,
+      "share": 1.0
+    },
+    "serie_a-2425": {
+      "missing_meta": 105,
+      "in_join_scope_events": 105,
+      "share": 1.0
+    },
+    "serie_a-2526": {
+      "missing_meta": 168,
+      "in_join_scope_events": 168,
+      "share": 1.0
+    },
+    "super_league-2223": {
+      "missing_meta": 105,
+      "in_join_scope_events": 105,
+      "share": 1.0
+    },
+    "super_league-2324": {
+      "missing_meta": 107,
+      "in_join_scope_events": 107,
+      "share": 1.0
+    },
+    "super_league-2425": {
+      "missing_meta": 104,
+      "in_join_scope_events": 104,
+      "share": 1.0
+    },
+    "super_league-2526": {
+      "missing_meta": 136,
+      "in_join_scope_events": 136,
+      "share": 1.0
+    },
+    "super_lig-2223": {
+      "missing_meta": 108,
+      "in_join_scope_events": 108,
+      "share": 1.0
+    },
+    "super_lig-2324": {
+      "missing_meta": 106,
+      "in_join_scope_events": 106,
+      "share": 1.0
+    },
+    "super_lig-2425": {
+      "missing_meta": 107,
+      "in_join_scope_events": 107,
+      "share": 1.0
+    },
+    "super_lig-2526": {
+      "missing_meta": 132,
+      "in_join_scope_events": 132,
+      "share": 1.0
+    }
+  },
+  "kickoff_histogram_by_dataset": {
+    "bundesliga-2223": {
+      "absent_key": 103,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "bundesliga-2324": {
+      "absent_key": 104,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "bundesliga-2425": {
+      "absent_key": 104,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "bundesliga-2526": {
+      "absent_key": 149,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "carabao_cup-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 93
+    },
+    "carabao_cup-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 93
+    },
+    "carabao_cup-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 93
+    },
+    "carabao_cup-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 93
+    },
+    "chance_liga-2223": {
+      "absent_key": 107,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "chance_liga-2324": {
+      "absent_key": 108,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "chance_liga-2425": {
+      "absent_key": 105,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "chance_liga-2526": {
+      "absent_key": 124,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "copa_del_rey-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 126
+    },
+    "copa_del_rey-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 116
+    },
+    "copa_del_rey-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 116
+    },
+    "copa_del_rey-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 127
+    },
+    "coppa_italia-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 45
+    },
+    "coppa_italia-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 45
+    },
+    "coppa_italia-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 45
+    },
+    "coppa_italia-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 45
+    },
+    "coupe_de_france-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 107
+    },
+    "coupe_de_france-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 111
+    },
+    "coupe_de_france-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 108
+    },
+    "coupe_de_france-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 109
+    },
+    "dfb_pokal-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 63
+    },
+    "dfb_pokal-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 63
+    },
+    "dfb_pokal-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 63
+    },
+    "dfb_pokal-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 63
+    },
+    "ekstraklasa-2223": {
+      "absent_key": 104,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "ekstraklasa-2324": {
+      "absent_key": 105,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "ekstraklasa-2425": {
+      "absent_key": 106,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "ekstraklasa-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 159
+    },
+    "eredivisie-2223": {
+      "absent_key": 108,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "eredivisie-2324": {
+      "absent_key": 104,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "eredivisie-2425": {
+      "absent_key": 104,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "eredivisie-2526": {
+      "absent_key": 136,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "fa_cup-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 106
+    },
+    "fa_cup-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 109
+    },
+    "fa_cup-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 123
+    },
+    "fa_cup-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 130
+    },
+    "jupiler_league-2223": {
+      "absent_key": 109,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "jupiler_league-2324": {
+      "absent_key": 104,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "jupiler_league-2425": {
+      "absent_key": 109,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "jupiler_league-2526": {
+      "absent_key": 141,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "knvb_beker-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 85
+    },
+    "knvb_beker-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 109
+    },
+    "knvb_beker-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 109
+    },
+    "knvb_beker-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 109
+    },
+    "laliga-2223": {
+      "absent_key": 105,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "laliga-2324": {
+      "absent_key": 106,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "laliga-2425": {
+      "absent_key": 107,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "laliga-2526": {
+      "absent_key": 176,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "liga_europy-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 125
+    },
+    "liga_europy-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 125
+    },
+    "liga_europy-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 134
+    },
+    "liga_europy-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 134
+    },
+    "liga_konferencji-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 125
+    },
+    "liga_konferencji-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 125
+    },
+    "liga_konferencji-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 135
+    },
+    "liga_konferencji-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 134
+    },
+    "liga_mistrzow-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 109
+    },
+    "liga_mistrzow-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 109
+    },
+    "liga_mistrzow-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 117
+    },
+    "liga_mistrzow-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 116
+    },
+    "liga_portugal-2223": {
+      "absent_key": 105,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "liga_portugal-2324": {
+      "absent_key": 103,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "liga_portugal-2425": {
+      "absent_key": 106,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "liga_portugal-2526": {
+      "absent_key": 154,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "ligue_1-2223": {
+      "absent_key": 109,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "ligue_1-2324": {
+      "absent_key": 109,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "ligue_1-2425": {
+      "absent_key": 108,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "ligue_1-2526": {
+      "absent_key": 134,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "premier_league-2223": {
+      "absent_key": 103,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "premier_league-2324": {
+      "absent_key": 103,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "premier_league-2425": {
+      "absent_key": 109,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "premier_league-2526": {
+      "absent_key": 168,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "puchar_belgii-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 121
+    },
+    "puchar_belgii-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 109
+    },
+    "puchar_belgii-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 153
+    },
+    "puchar_belgii-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 33
+    },
+    "puchar_czech-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 103
+    },
+    "puchar_czech-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 116
+    },
+    "puchar_czech-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 104
+    },
+    "puchar_czech-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 124
+    },
+    "puchar_grecji-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 97
+    },
+    "puchar_grecji-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 92
+    },
+    "puchar_grecji-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 93
+    },
+    "puchar_grecji-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 64
+    },
+    "puchar_polski-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 69
+    },
+    "puchar_polski-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 69
+    },
+    "puchar_polski-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 69
+    },
+    "puchar_polski-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 69
+    },
+    "puchar_turcji-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 123
+    },
+    "puchar_turcji-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 120
+    },
+    "puchar_turcji-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 126
+    },
+    "puchar_turcji-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 130
+    },
+    "serie_a-2223": {
+      "absent_key": 103,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "serie_a-2324": {
+      "absent_key": 105,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "serie_a-2425": {
+      "absent_key": 105,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "serie_a-2526": {
+      "absent_key": 168,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "super_league-2223": {
+      "absent_key": 105,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "super_league-2324": {
+      "absent_key": 107,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "super_league-2425": {
+      "absent_key": 104,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "super_league-2526": {
+      "absent_key": 136,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "super_lig-2223": {
+      "absent_key": 108,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "super_lig-2324": {
+      "absent_key": 106,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "super_lig-2425": {
+      "absent_key": 107,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "super_lig-2526": {
+      "absent_key": 132,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 0
+    },
+    "taca_de_portugal-2223": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 148
+    },
+    "taca_de_portugal-2324": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 111
+    },
+    "taca_de_portugal-2425": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 110
+    },
+    "taca_de_portugal-2526": {
+      "absent_key": 0,
+      "present_no_valid_unix": 0,
+      "present_unix_ok": 112
+    }
+  },
+  "league_join_scope_table": [
+    {
+      "dataset_label": "ekstraklasa-2223",
+      "ids_name": "ekstraklasa_2223",
+      "ids_file": "present",
+      "ids_event_count": 104,
+      "join_scope": "ekstraklasa_pol_agg",
+      "join_detail": null,
+      "cli": "POL_AGG",
+      "division": null
+    },
+    {
+      "dataset_label": "ekstraklasa-2324",
+      "ids_name": "ekstraklasa_2324",
+      "ids_file": "present",
+      "ids_event_count": 105,
+      "join_scope": "ekstraklasa_pol_agg",
+      "join_detail": null,
+      "cli": "POL_AGG",
+      "division": null
+    },
+    {
+      "dataset_label": "ekstraklasa-2425",
+      "ids_name": "ekstraklasa_2425",
+      "ids_file": "present",
+      "ids_event_count": 106,
+      "join_scope": "ekstraklasa_pol_agg",
+      "join_detail": null,
+      "cli": "POL_AGG",
+      "division": null
+    },
+    {
+      "dataset_label": "ekstraklasa-2526",
+      "ids_name": "ekstraklasa_2526",
+      "ids_file": "present",
+      "ids_event_count": 159,
+      "join_scope": "ekstraklasa_pol_agg",
+      "join_detail": null,
+      "cli": "POL_AGG",
+      "division": null
+    },
+    {
+      "dataset_label": "chance_liga-2223",
+      "ids_name": "chance_liga_2223",
+      "ids_file": "present",
+      "ids_event_count": 107,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "CZE1",
+      "division": "C1"
+    },
+    {
+      "dataset_label": "chance_liga-2324",
+      "ids_name": "chance_liga_2324",
+      "ids_file": "present",
+      "ids_event_count": 108,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "CZE1",
+      "division": "C1"
+    },
+    {
+      "dataset_label": "chance_liga-2425",
+      "ids_name": "chance_liga_2425",
+      "ids_file": "present",
+      "ids_event_count": 105,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "CZE1",
+      "division": "C1"
+    },
+    {
+      "dataset_label": "chance_liga-2526",
+      "ids_name": "chance_liga_2526",
+      "ids_file": "present",
+      "ids_event_count": 124,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "CZE1",
+      "division": "C1"
+    },
+    {
+      "dataset_label": "liga_portugal-2223",
+      "ids_name": "liga_portugal_2223",
+      "ids_file": "present",
+      "ids_event_count": 105,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "POR1",
+      "division": "P1"
+    },
+    {
+      "dataset_label": "liga_portugal-2324",
+      "ids_name": "liga_portugal_2324",
+      "ids_file": "present",
+      "ids_event_count": 103,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "POR1",
+      "division": "P1"
+    },
+    {
+      "dataset_label": "liga_portugal-2425",
+      "ids_name": "liga_portugal_2425",
+      "ids_file": "present",
+      "ids_event_count": 106,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "POR1",
+      "division": "P1"
+    },
+    {
+      "dataset_label": "liga_portugal-2526",
+      "ids_name": "liga_portugal_2526",
+      "ids_file": "present",
+      "ids_event_count": 154,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "POR1",
+      "division": "P1"
+    },
+    {
+      "dataset_label": "laliga-2223",
+      "ids_name": "laliga_2223",
+      "ids_file": "present",
+      "ids_event_count": 105,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ESP1",
+      "division": "SP1"
+    },
+    {
+      "dataset_label": "laliga-2324",
+      "ids_name": "laliga_2324",
+      "ids_file": "present",
+      "ids_event_count": 106,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ESP1",
+      "division": "SP1"
+    },
+    {
+      "dataset_label": "laliga-2425",
+      "ids_name": "laliga_2425",
+      "ids_file": "present",
+      "ids_event_count": 107,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ESP1",
+      "division": "SP1"
+    },
+    {
+      "dataset_label": "laliga-2526",
+      "ids_name": "laliga_2526",
+      "ids_file": "present",
+      "ids_event_count": 176,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ESP1",
+      "division": "SP1"
+    },
+    {
+      "dataset_label": "serie_a-2223",
+      "ids_name": "serie_a_2223",
+      "ids_file": "present",
+      "ids_event_count": 103,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ITA1",
+      "division": "I1"
+    },
+    {
+      "dataset_label": "serie_a-2324",
+      "ids_name": "serie_a_2324",
+      "ids_file": "present",
+      "ids_event_count": 105,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ITA1",
+      "division": "I1"
+    },
+    {
+      "dataset_label": "serie_a-2425",
+      "ids_name": "serie_a_2425",
+      "ids_file": "present",
+      "ids_event_count": 105,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ITA1",
+      "division": "I1"
+    },
+    {
+      "dataset_label": "serie_a-2526",
+      "ids_name": "serie_a_2526",
+      "ids_file": "present",
+      "ids_event_count": 168,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ITA1",
+      "division": "I1"
+    },
+    {
+      "dataset_label": "premier_league-2223",
+      "ids_name": "premier_league_2223",
+      "ids_file": "present",
+      "ids_event_count": 103,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ENG1",
+      "division": "E0"
+    },
+    {
+      "dataset_label": "premier_league-2324",
+      "ids_name": "premier_league_2324",
+      "ids_file": "present",
+      "ids_event_count": 103,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ENG1",
+      "division": "E0"
+    },
+    {
+      "dataset_label": "premier_league-2425",
+      "ids_name": "premier_league_2425",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ENG1",
+      "division": "E0"
+    },
+    {
+      "dataset_label": "premier_league-2526",
+      "ids_name": "premier_league_2526",
+      "ids_file": "present",
+      "ids_event_count": 168,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "ENG1",
+      "division": "E0"
+    },
+    {
+      "dataset_label": "bundesliga-2223",
+      "ids_name": "bundesliga_2223",
+      "ids_file": "present",
+      "ids_event_count": 103,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "GER1",
+      "division": "D1"
+    },
+    {
+      "dataset_label": "bundesliga-2324",
+      "ids_name": "bundesliga_2324",
+      "ids_file": "present",
+      "ids_event_count": 104,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "GER1",
+      "division": "D1"
+    },
+    {
+      "dataset_label": "bundesliga-2425",
+      "ids_name": "bundesliga_2425",
+      "ids_file": "present",
+      "ids_event_count": 104,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "GER1",
+      "division": "D1"
+    },
+    {
+      "dataset_label": "bundesliga-2526",
+      "ids_name": "bundesliga_2526",
+      "ids_file": "present",
+      "ids_event_count": 149,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "GER1",
+      "division": "D1"
+    },
+    {
+      "dataset_label": "ligue_1-2223",
+      "ids_name": "ligue_1_2223",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "FRA1",
+      "division": "F1"
+    },
+    {
+      "dataset_label": "ligue_1-2324",
+      "ids_name": "ligue_1_2324",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "FRA1",
+      "division": "F1"
+    },
+    {
+      "dataset_label": "ligue_1-2425",
+      "ids_name": "ligue_1_2425",
+      "ids_file": "present",
+      "ids_event_count": 108,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "FRA1",
+      "division": "F1"
+    },
+    {
+      "dataset_label": "ligue_1-2526",
+      "ids_name": "ligue_1_2526",
+      "ids_file": "present",
+      "ids_event_count": 134,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "FRA1",
+      "division": "F1"
+    },
+    {
+      "dataset_label": "eredivisie-2223",
+      "ids_name": "eredivisie_2223",
+      "ids_file": "present",
+      "ids_event_count": 108,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "NED1",
+      "division": "N1"
+    },
+    {
+      "dataset_label": "eredivisie-2324",
+      "ids_name": "eredivisie_2324",
+      "ids_file": "present",
+      "ids_event_count": 104,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "NED1",
+      "division": "N1"
+    },
+    {
+      "dataset_label": "eredivisie-2425",
+      "ids_name": "eredivisie_2425",
+      "ids_file": "present",
+      "ids_event_count": 104,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "NED1",
+      "division": "N1"
+    },
+    {
+      "dataset_label": "eredivisie-2526",
+      "ids_name": "eredivisie_2526",
+      "ids_file": "present",
+      "ids_event_count": 136,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "NED1",
+      "division": "N1"
+    },
+    {
+      "dataset_label": "jupiler_league-2223",
+      "ids_name": "jupiler_league_2223",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "BEL1",
+      "division": "B1"
+    },
+    {
+      "dataset_label": "jupiler_league-2324",
+      "ids_name": "jupiler_league_2324",
+      "ids_file": "present",
+      "ids_event_count": 104,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "BEL1",
+      "division": "B1"
+    },
+    {
+      "dataset_label": "jupiler_league-2425",
+      "ids_name": "jupiler_league_2425",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "BEL1",
+      "division": "B1"
+    },
+    {
+      "dataset_label": "jupiler_league-2526",
+      "ids_name": "jupiler_league_2526",
+      "ids_file": "present",
+      "ids_event_count": 141,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "BEL1",
+      "division": "B1"
+    },
+    {
+      "dataset_label": "super_league-2223",
+      "ids_name": "super_league_2223",
+      "ids_file": "present",
+      "ids_event_count": 105,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "GRE1",
+      "division": "G1"
+    },
+    {
+      "dataset_label": "super_league-2324",
+      "ids_name": "super_league_2324",
+      "ids_file": "present",
+      "ids_event_count": 107,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "GRE1",
+      "division": "G1"
+    },
+    {
+      "dataset_label": "super_league-2425",
+      "ids_name": "super_league_2425",
+      "ids_file": "present",
+      "ids_event_count": 104,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "GRE1",
+      "division": "G1"
+    },
+    {
+      "dataset_label": "super_league-2526",
+      "ids_name": "super_league_2526",
+      "ids_file": "present",
+      "ids_event_count": 136,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "GRE1",
+      "division": "G1"
+    },
+    {
+      "dataset_label": "super_lig-2223",
+      "ids_name": "super_lig_2223",
+      "ids_file": "present",
+      "ids_event_count": 108,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "TUR1",
+      "division": "T1"
+    },
+    {
+      "dataset_label": "super_lig-2324",
+      "ids_name": "super_lig_2324",
+      "ids_file": "present",
+      "ids_event_count": 106,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "TUR1",
+      "division": "T1"
+    },
+    {
+      "dataset_label": "super_lig-2425",
+      "ids_name": "super_lig_2425",
+      "ids_file": "present",
+      "ids_event_count": 107,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "TUR1",
+      "division": "T1"
+    },
+    {
+      "dataset_label": "super_lig-2526",
+      "ids_name": "super_lig_2526",
+      "ids_file": "present",
+      "ids_event_count": 132,
+      "join_scope": "leag_key_to_cli",
+      "join_detail": "mmz",
+      "cli": "TUR1",
+      "division": "T1"
+    },
+    {
+      "dataset_label": "liga_mistrzow-2223",
+      "ids_name": "liga_mistrzow_2223",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_mistrzow"
+    },
+    {
+      "dataset_label": "liga_mistrzow-2324",
+      "ids_name": "liga_mistrzow_2324",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_mistrzow"
+    },
+    {
+      "dataset_label": "liga_mistrzow-2425",
+      "ids_name": "liga_mistrzow_2425",
+      "ids_file": "present",
+      "ids_event_count": 117,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_mistrzow"
+    },
+    {
+      "dataset_label": "liga_mistrzow-2526",
+      "ids_name": "liga_mistrzow_2526",
+      "ids_file": "present",
+      "ids_event_count": 116,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_mistrzow"
+    },
+    {
+      "dataset_label": "liga_europy-2223",
+      "ids_name": "liga_europy_2223",
+      "ids_file": "present",
+      "ids_event_count": 125,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_europy"
+    },
+    {
+      "dataset_label": "liga_europy-2324",
+      "ids_name": "liga_europy_2324",
+      "ids_file": "present",
+      "ids_event_count": 125,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_europy"
+    },
+    {
+      "dataset_label": "liga_europy-2425",
+      "ids_name": "liga_europy_2425",
+      "ids_file": "present",
+      "ids_event_count": 134,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_europy"
+    },
+    {
+      "dataset_label": "liga_europy-2526",
+      "ids_name": "liga_europy_2526",
+      "ids_file": "present",
+      "ids_event_count": 134,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_europy"
+    },
+    {
+      "dataset_label": "liga_konferencji-2223",
+      "ids_name": "liga_konferencji_2223",
+      "ids_file": "present",
+      "ids_event_count": 125,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_konferencji"
+    },
+    {
+      "dataset_label": "liga_konferencji-2324",
+      "ids_name": "liga_konferencji_2324",
+      "ids_file": "present",
+      "ids_event_count": 125,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_konferencji"
+    },
+    {
+      "dataset_label": "liga_konferencji-2425",
+      "ids_name": "liga_konferencji_2425",
+      "ids_file": "present",
+      "ids_event_count": 135,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_konferencji"
+    },
+    {
+      "dataset_label": "liga_konferencji-2526",
+      "ids_name": "liga_konferencji_2526",
+      "ids_file": "present",
+      "ids_event_count": 134,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "liga_konferencji"
+    },
+    {
+      "dataset_label": "puchar_polski-2223",
+      "ids_name": "puchar_polski_2223",
+      "ids_file": "present",
+      "ids_event_count": 69,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_polski"
+    },
+    {
+      "dataset_label": "puchar_polski-2324",
+      "ids_name": "puchar_polski_2324",
+      "ids_file": "present",
+      "ids_event_count": 69,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_polski"
+    },
+    {
+      "dataset_label": "puchar_polski-2425",
+      "ids_name": "puchar_polski_2425",
+      "ids_file": "present",
+      "ids_event_count": 69,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_polski"
+    },
+    {
+      "dataset_label": "puchar_polski-2526",
+      "ids_name": "puchar_polski_2526",
+      "ids_file": "present",
+      "ids_event_count": 69,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_polski"
+    },
+    {
+      "dataset_label": "puchar_czech-2223",
+      "ids_name": "puchar_czech_2223",
+      "ids_file": "present",
+      "ids_event_count": 103,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_czech"
+    },
+    {
+      "dataset_label": "puchar_czech-2324",
+      "ids_name": "puchar_czech_2324",
+      "ids_file": "present",
+      "ids_event_count": 116,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_czech"
+    },
+    {
+      "dataset_label": "puchar_czech-2425",
+      "ids_name": "puchar_czech_2425",
+      "ids_file": "present",
+      "ids_event_count": 104,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_czech"
+    },
+    {
+      "dataset_label": "puchar_czech-2526",
+      "ids_name": "puchar_czech_2526",
+      "ids_file": "present",
+      "ids_event_count": 124,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_czech"
+    },
+    {
+      "dataset_label": "taca_de_portugal-2223",
+      "ids_name": "taca_de_portugal_2223",
+      "ids_file": "present",
+      "ids_event_count": 148,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "taca_de_portugal"
+    },
+    {
+      "dataset_label": "taca_de_portugal-2324",
+      "ids_name": "taca_de_portugal_2324",
+      "ids_file": "present",
+      "ids_event_count": 111,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "taca_de_portugal"
+    },
+    {
+      "dataset_label": "taca_de_portugal-2425",
+      "ids_name": "taca_de_portugal_2425",
+      "ids_file": "present",
+      "ids_event_count": 110,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "taca_de_portugal"
+    },
+    {
+      "dataset_label": "taca_de_portugal-2526",
+      "ids_name": "taca_de_portugal_2526",
+      "ids_file": "present",
+      "ids_event_count": 112,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "taca_de_portugal"
+    },
+    {
+      "dataset_label": "copa_del_rey-2223",
+      "ids_name": "copa_del_rey_2223",
+      "ids_file": "present",
+      "ids_event_count": 126,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "copa_del_rey"
+    },
+    {
+      "dataset_label": "copa_del_rey-2324",
+      "ids_name": "copa_del_rey_2324",
+      "ids_file": "present",
+      "ids_event_count": 116,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "copa_del_rey"
+    },
+    {
+      "dataset_label": "copa_del_rey-2425",
+      "ids_name": "copa_del_rey_2425",
+      "ids_file": "present",
+      "ids_event_count": 116,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "copa_del_rey"
+    },
+    {
+      "dataset_label": "copa_del_rey-2526",
+      "ids_name": "copa_del_rey_2526",
+      "ids_file": "present",
+      "ids_event_count": 127,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "copa_del_rey"
+    },
+    {
+      "dataset_label": "coppa_italia-2223",
+      "ids_name": "coppa_italia_2223",
+      "ids_file": "present",
+      "ids_event_count": 45,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "coppa_italia"
+    },
+    {
+      "dataset_label": "coppa_italia-2324",
+      "ids_name": "coppa_italia_2324",
+      "ids_file": "present",
+      "ids_event_count": 45,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "coppa_italia"
+    },
+    {
+      "dataset_label": "coppa_italia-2425",
+      "ids_name": "coppa_italia_2425",
+      "ids_file": "present",
+      "ids_event_count": 45,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "coppa_italia"
+    },
+    {
+      "dataset_label": "coppa_italia-2526",
+      "ids_name": "coppa_italia_2526",
+      "ids_file": "present",
+      "ids_event_count": 45,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "coppa_italia"
+    },
+    {
+      "dataset_label": "fa_cup-2223",
+      "ids_name": "fa_cup_2223",
+      "ids_file": "present",
+      "ids_event_count": 106,
+      "join_scope": "engsoccerdata_facup",
+      "join_detail": null,
+      "cli": "ENGSD",
+      "division": "FACUP"
+    },
+    {
+      "dataset_label": "fa_cup-2324",
+      "ids_name": "fa_cup_2324",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "engsoccerdata_facup",
+      "join_detail": null,
+      "cli": "ENGSD",
+      "division": "FACUP"
+    },
+    {
+      "dataset_label": "fa_cup-2425",
+      "ids_name": "fa_cup_2425",
+      "ids_file": "present",
+      "ids_event_count": 123,
+      "join_scope": "engsoccerdata_facup",
+      "join_detail": null,
+      "cli": "ENGSD",
+      "division": "FACUP"
+    },
+    {
+      "dataset_label": "fa_cup-2526",
+      "ids_name": "fa_cup_2526",
+      "ids_file": "present",
+      "ids_event_count": 130,
+      "join_scope": "engsoccerdata_facup",
+      "join_detail": null,
+      "cli": "ENGSD",
+      "division": "FACUP"
+    },
+    {
+      "dataset_label": "carabao_cup-2223",
+      "ids_name": "carabao_cup_2223",
+      "ids_file": "present",
+      "ids_event_count": 93,
+      "join_scope": "engsoccerdata_leaguecup",
+      "join_detail": null,
+      "cli": "ENGSD",
+      "division": "CARABAO"
+    },
+    {
+      "dataset_label": "carabao_cup-2324",
+      "ids_name": "carabao_cup_2324",
+      "ids_file": "present",
+      "ids_event_count": 93,
+      "join_scope": "engsoccerdata_leaguecup",
+      "join_detail": null,
+      "cli": "ENGSD",
+      "division": "CARABAO"
+    },
+    {
+      "dataset_label": "carabao_cup-2425",
+      "ids_name": "carabao_cup_2425",
+      "ids_file": "present",
+      "ids_event_count": 93,
+      "join_scope": "engsoccerdata_leaguecup",
+      "join_detail": null,
+      "cli": "ENGSD",
+      "division": "CARABAO"
+    },
+    {
+      "dataset_label": "carabao_cup-2526",
+      "ids_name": "carabao_cup_2526",
+      "ids_file": "present",
+      "ids_event_count": 93,
+      "join_scope": "engsoccerdata_leaguecup",
+      "join_detail": null,
+      "cli": "ENGSD",
+      "division": "CARABAO"
+    },
+    {
+      "dataset_label": "dfb_pokal-2223",
+      "ids_name": "dfb_pokal_2223",
+      "ids_file": "present",
+      "ids_event_count": 63,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "dfb_pokal"
+    },
+    {
+      "dataset_label": "dfb_pokal-2324",
+      "ids_name": "dfb_pokal_2324",
+      "ids_file": "present",
+      "ids_event_count": 63,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "dfb_pokal"
+    },
+    {
+      "dataset_label": "dfb_pokal-2425",
+      "ids_name": "dfb_pokal_2425",
+      "ids_file": "present",
+      "ids_event_count": 63,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "dfb_pokal"
+    },
+    {
+      "dataset_label": "dfb_pokal-2526",
+      "ids_name": "dfb_pokal_2526",
+      "ids_file": "present",
+      "ids_event_count": 63,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "dfb_pokal"
+    },
+    {
+      "dataset_label": "coupe_de_france-2223",
+      "ids_name": "coupe_de_france_2223",
+      "ids_file": "present",
+      "ids_event_count": 107,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "coupe_de_france"
+    },
+    {
+      "dataset_label": "coupe_de_france-2324",
+      "ids_name": "coupe_de_france_2324",
+      "ids_file": "present",
+      "ids_event_count": 111,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "coupe_de_france"
+    },
+    {
+      "dataset_label": "coupe_de_france-2425",
+      "ids_name": "coupe_de_france_2425",
+      "ids_file": "present",
+      "ids_event_count": 108,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "coupe_de_france"
+    },
+    {
+      "dataset_label": "coupe_de_france-2526",
+      "ids_name": "coupe_de_france_2526",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "coupe_de_france"
+    },
+    {
+      "dataset_label": "knvb_beker-2223",
+      "ids_name": "knvb_beker_2223",
+      "ids_file": "present",
+      "ids_event_count": 85,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "knvb_beker"
+    },
+    {
+      "dataset_label": "knvb_beker-2324",
+      "ids_name": "knvb_beker_2324",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "knvb_beker"
+    },
+    {
+      "dataset_label": "knvb_beker-2425",
+      "ids_name": "knvb_beker_2425",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "knvb_beker"
+    },
+    {
+      "dataset_label": "knvb_beker-2526",
+      "ids_name": "knvb_beker_2526",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "knvb_beker"
+    },
+    {
+      "dataset_label": "puchar_belgii-2223",
+      "ids_name": "puchar_belgii_2223",
+      "ids_file": "present",
+      "ids_event_count": 121,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_belgii"
+    },
+    {
+      "dataset_label": "puchar_belgii-2324",
+      "ids_name": "puchar_belgii_2324",
+      "ids_file": "present",
+      "ids_event_count": 109,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_belgii"
+    },
+    {
+      "dataset_label": "puchar_belgii-2425",
+      "ids_name": "puchar_belgii_2425",
+      "ids_file": "present",
+      "ids_event_count": 153,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_belgii"
+    },
+    {
+      "dataset_label": "puchar_belgii-2526",
+      "ids_name": "puchar_belgii_2526",
+      "ids_file": "present",
+      "ids_event_count": 33,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_belgii"
+    },
+    {
+      "dataset_label": "puchar_grecji-2223",
+      "ids_name": "puchar_grecji_2223",
+      "ids_file": "present",
+      "ids_event_count": 97,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_grecji"
+    },
+    {
+      "dataset_label": "puchar_grecji-2324",
+      "ids_name": "puchar_grecji_2324",
+      "ids_file": "present",
+      "ids_event_count": 92,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_grecji"
+    },
+    {
+      "dataset_label": "puchar_grecji-2425",
+      "ids_name": "puchar_grecji_2425",
+      "ids_file": "present",
+      "ids_event_count": 93,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_grecji"
+    },
+    {
+      "dataset_label": "puchar_grecji-2526",
+      "ids_name": "puchar_grecji_2526",
+      "ids_file": "present",
+      "ids_event_count": 64,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_grecji"
+    },
+    {
+      "dataset_label": "puchar_turcji-2223",
+      "ids_name": "puchar_turcji_2223",
+      "ids_file": "present",
+      "ids_event_count": 123,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_turcji"
+    },
+    {
+      "dataset_label": "puchar_turcji-2324",
+      "ids_name": "puchar_turcji_2324",
+      "ids_file": "present",
+      "ids_event_count": 120,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_turcji"
+    },
+    {
+      "dataset_label": "puchar_turcji-2425",
+      "ids_name": "puchar_turcji_2425",
+      "ids_file": "present",
+      "ids_event_count": 126,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_turcji"
+    },
+    {
+      "dataset_label": "puchar_turcji-2526",
+      "ids_name": "puchar_turcji_2526",
+      "ids_file": "present",
+      "ids_event_count": 130,
+      "join_scope": "unsupported_league_key",
+      "join_detail": "puchar_turcji"
+    }
+  ],
+  "ids_never_attempted_dataset_labels": [
+    "copa_del_rey-2223",
+    "copa_del_rey-2324",
+    "copa_del_rey-2425",
+    "copa_del_rey-2526",
+    "coppa_italia-2223",
+    "coppa_italia-2324",
+    "coppa_italia-2425",
+    "coppa_italia-2526",
+    "coupe_de_france-2223",
+    "coupe_de_france-2324",
+    "coupe_de_france-2425",
+    "coupe_de_france-2526",
+    "dfb_pokal-2223",
+    "dfb_pokal-2324",
+    "dfb_pokal-2425",
+    "dfb_pokal-2526",
+    "knvb_beker-2223",
+    "knvb_beker-2324",
+    "knvb_beker-2425",
+    "knvb_beker-2526",
+    "liga_europy-2223",
+    "liga_europy-2324",
+    "liga_europy-2425",
+    "liga_europy-2526",
+    "liga_konferencji-2223",
+    "liga_konferencji-2324",
+    "liga_konferencji-2425",
+    "liga_konferencji-2526",
+    "liga_mistrzow-2223",
+    "liga_mistrzow-2324",
+    "liga_mistrzow-2425",
+    "liga_mistrzow-2526",
+    "puchar_belgii-2223",
+    "puchar_belgii-2324",
+    "puchar_belgii-2425",
+    "puchar_belgii-2526",
+    "puchar_czech-2223",
+    "puchar_czech-2324",
+    "puchar_czech-2425",
+    "puchar_czech-2526",
+    "puchar_grecji-2223",
+    "puchar_grecji-2324",
+    "puchar_grecji-2425",
+    "puchar_grecji-2526",
+    "puchar_polski-2223",
+    "puchar_polski-2324",
+    "puchar_polski-2425",
+    "puchar_polski-2526",
+    "puchar_turcji-2223",
+    "puchar_turcji-2324",
+    "puchar_turcji-2425",
+    "puchar_turcji-2526",
+    "taca_de_portugal-2223",
+    "taca_de_portugal-2324",
+    "taca_de_portugal-2425",
+    "taca_de_portugal-2526"
+  ],
+  "forensics_df_st_li": [
+    {
+      "sample_path_relative": "data/raw/flashscore/polska/ekstraklasa/2526/matches/YsxcdXdm/df_st_1_YsxcdXdm.txt",
+      "first_bytes_hex": "5345c3b74d65637ac2ac7e5346c3b7546f70207374617479",
+      "byte_len_scanned": 6476,
+      "has_tilde_aa": false,
+      "has_marker_px_latin1": false,
+      "has_marker_px_utf8": false
+    },
+    {
+      "sample_path_relative": "data/raw/flashscore/polska/ekstraklasa/2526/matches/hA1OsYsf/df_st_1_hA1OsYsf.txt",
+      "first_bytes_hex": "5345c3b74d65637ac2ac7e5346c3b7546f70207374617479",
+      "byte_len_scanned": 6358,
+      "has_tilde_aa": false,
+      "has_marker_px_latin1": false,
+      "has_marker_px_utf8": false
+    },
+    {
+      "sample_path_relative": "data/raw/flashscore/polska/ekstraklasa/2526/matches/EceQ1gZP/df_st_1_EceQ1gZP.txt",
+      "first_bytes_hex": "5345c3b74d65637ac2ac7e5346c3b7546f70207374617479",
+      "byte_len_scanned": 6528,
+      "has_tilde_aa": false,
+      "has_marker_px_latin1": false,
+      "has_marker_px_utf8": false
+    },
+    {
+      "sample_path_relative": "data/raw/flashscore/polska/ekstraklasa/2526/matches/WfDFqfDs/df_st_1_WfDFqfDs.txt",
+      "first_bytes_hex": "5345c3b74d65637ac2ac7e5346c3b7546f70207374617479",
+      "byte_len_scanned": 6516,
+      "has_tilde_aa": false,
+      "has_marker_px_latin1": false,
+      "has_marker_px_utf8": false
+    },
+    {
+      "sample_path_relative": "data/raw/flashscore/polska/ekstraklasa/2526/matches/QyFVuCC6/df_st_1_QyFVuCC6.txt",
+      "first_bytes_hex": "5345c3b74d65637ac2ac7e5346c3b7546f70207374617479",
+      "byte_len_scanned": 6402,
+      "has_tilde_aa": false,
+      "has_marker_px_latin1": false,
+      "has_marker_px_utf8": false
+    },
+    {
+      "sample_path_relative": "data/raw/flashscore/polska/ekstraklasa/2526/matches/0fTDhkdC/df_st_1_0fTDhkdC.txt",
+      "first_bytes_hex": "5345c3b74d65637ac2ac7e5346c3b7546f70207374617479",
+      "byte_len_scanned": 6612,
+      "has_tilde_aa": false,
+      "has_marker_px_latin1": false,
+      "has_marker_px_utf8": false
+    },
+    {
+      "sample_path_relative": "data/raw/flashscore/polska/ekstraklasa/2526/matches/M38vvjsJ/df_st_1_M38vvjsJ.txt",
+      "first_bytes_hex": "5345c3b74d65637ac2ac7e5346c3b7546f70207374617479",
+      "byte_len_scanned": 6355,
+      "has_tilde_aa": false,
+      "has_marker_px_latin1": false,
+      "has_marker_px_utf8": false
+    },
+    {
+      "sample_path_relative": "data/raw/flashscore/polska/ekstraklasa/2526/matches/0CMqkGkK/df_st_1_0CMqkGkK.txt",
+      "first_bytes_hex": "5345c3b74d65637ac2ac7e5346c3b7546f70207374617479",
+      "byte_len_scanned": 6397,
+      "has_tilde_aa": false,
+      "has_marker_px_latin1": false,
+      "has_marker_px_utf8": false
+    }
+  ],
+  "notes": "skipped_no_row_build_semantics matches build_integration_supplement counter (meta present but lookup_fd_row returned None, including unix_ts is None).",
+  "lookup_miss_sample_meta": {
+    "preset": "lookup_miss_valid_unix",
+    "population": 982,
+    "sample_size": 0,
+    "seed": 42,
+    "stratification": "proportional_largest_remainder",
+    "diagnostic_wide_radius_days": 7,
+    "sampling_skipped": true,
+    "classified_full_population": true,
+    "taxonomy_reference": "diagnose_fd_row_miss in football_ai.integration.join_football_data (wide uses k∈[-R,R] excluding {-1,0,1})"
+  },
+  "lookup_miss_diagnosis_sample": [],
+  "lookup_miss_category_histogram_sample": {},
+  "lookup_miss_category_histogram_population": {
+    "csv_index_empty": 840,
+    "no_ordered_hit_after_pmR": 142
+  },
+  "lookup_miss_category_histogram_by_dataset": {
+    "carabao_cup-2223": {
+      "csv_index_empty": 93
+    },
+    "carabao_cup-2324": {
+      "csv_index_empty": 93
+    },
+    "carabao_cup-2425": {
+      "csv_index_empty": 93
+    },
+    "carabao_cup-2526": {
+      "csv_index_empty": 93
+    },
+    "ekstraklasa-2526": {
+      "no_ordered_hit_after_pmR": 142
+    },
+    "fa_cup-2223": {
+      "csv_index_empty": 106
+    },
+    "fa_cup-2324": {
+      "csv_index_empty": 109
+    },
+    "fa_cup-2425": {
+      "csv_index_empty": 123
+    },
+    "fa_cup-2526": {
+      "csv_index_empty": 130
+    }
+  },
+  "baseline_bottleneck_hint": "nigdy próby join: 5717/12141 (47.1%) — zakres CSV/unsupported; w scope join brak wpisu meta_ix: skipped_no_meta=5425; meta jest, brak dopasowania CSV: skipped_no_row~=982"
+}

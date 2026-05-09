@@ -15,7 +15,8 @@ class CollectConfig:
     storage_state_path: Optional[Path] = None
     user_data_dir: Optional[Path] = None
     debug_dir: Optional[Path] = None
-    # polite delays are handled by Playwright's pacing; we also keep actions minimal
+    # After scrolling/load-more we can persist page HTML for AA blocks (supplement seed).
+    wyniki_html_out: Optional[Path] = None
 
 
 EVENT_ID_RE = re.compile(r"~AA÷([A-Za-z0-9]{8})")
@@ -180,6 +181,10 @@ def collect_match_ids_from_results_page(
             (cfg.debug_dir / "responses.txt").write_text("\n".join(debug_urls) + "\n", encoding="utf-8")
             (cfg.debug_dir / "hit_responses.txt").write_text("\n".join(debug_hits) + "\n", encoding="utf-8")
             (cfg.debug_dir / "captured_ids.txt").write_text("\n".join(ids) + "\n", encoding="utf-8")
+
+        if cfg.wyniki_html_out is not None:
+            cfg.wyniki_html_out.parent.mkdir(parents=True, exist_ok=True)
+            cfg.wyniki_html_out.write_text(page.content(), encoding="utf-8", errors="ignore")
 
         context.close()
 

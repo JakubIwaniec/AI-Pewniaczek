@@ -1,0 +1,1141 @@
+{
+  "generated_at": "2026-05-09T22:22:45Z",
+  "schema_version": "2",
+  "raw_gap_stats": {
+    "events_total": 12141,
+    "incomplete_events_flashscore_audit": 1953,
+    "missing_df_sui": 0,
+    "missing_df_st": 1556,
+    "missing_df_li": 1886,
+    "notes": "df_sui_missing counts events where RAW sui absent; supplement.sqlite does NOT change these checks."
+  },
+  "supplement_totals_seen_on_any_event_iteration": {
+    "events_touching_fallback_fd_counts_loops_events": 34,
+    "events_touching_fallback_of_counts_loops_events": 93,
+    "events_dual_fallback_fd_and_of": 0,
+    "dual_sample_pairs_dataset_eid": [],
+    "events_dual_note": "Per manifest (dataset_label, event_id): event has at least one football-data row and one openfootball row in supplement. Usually 0 because UEFA datasets only receive OpenFootball merges and domestic leagues only football-data in the default pipeline."
+  },
+  "tier_b_model_hints": {
+    "still_without_raw_df_st_and_without_any_supplement": 1556,
+    "raw_lineup_gap_count_events_missing_nonempty_df_li": 1886,
+    "footnote": "football-data + openfootball supply results/some aggregates; neither replaces df_li XI."
+  },
+  "lineup_gap_breakdown": {
+    "missing_df_li_and_raw_df_st_present": 397,
+    "missing_df_li_and_missing_raw_df_st": 1489,
+    "sums_to_raw_gap_missing_df_li": true,
+    "cli_for_lineups": "python scripts/data_integrity_flashscore.py --repair --repair-feeds li (or scripts/backfill_lineups.py)."
+  },
+  "raw_backfill_and_repair_hints": {
+    "full_manifest_flashscore_raw_repair": "python scripts/data_integrity_flashscore.py --repair          # df_sui + df_st + df_li gaps",
+    "subset_lineups_only": "python scripts/data_integrity_flashscore.py --repair --repair-feeds li # lineup gaps only",
+    "subset_stats_only": "python scripts/data_integrity_flashscore.py --repair --repair-feeds st",
+    "subset_sui_only": "python scripts/data_integrity_flashscore.py --repair --repair-feeds sui",
+    "script_backfill_li_convenience": "python scripts/backfill_lineups.py  # delegates to filtered repair(li)",
+    "df_li_legacy_cli": "python -m football_ai backfill-flashscore-lineups (single IDS file + out-subdir).",
+    "df_st": "Use full --repair or --repair-feeds st; Flashscore supplement never replaces df_st.",
+    "fixture_uid_migration_note": "After pulling new writers, python scripts/migrate_supplement_fixture_uid.py (creates dated .bak + fills fixture_uid on legacy rows).",
+    "note": "Repair does not guarantee non-empty upstream responses — compare gap-stats before vs after."
+  },
+  "three_source_coverage_note": "Flashscore RAW + football-data supplement + OpenFootball UEFA text cover different fields; full stat/XI parity requires complete df_* RAW plus successful joins (see metrics above).",
+  "integration_pipeline_hint": "UEFA/OpenFootball merge needs AA÷ meta for each IDS event_id; global mega f_1_-1_* often omits UEFA CL/EL. Run scripts/download_flashscore_uefa_results_seeds.py → data/raw/flashscore/seed_results/*_wyniki.html (embedded AA rows from /wyniki/ pages), plus optional manifest feed keys, slice_flashscore_list_feed.py, or capture list-feed via football_ai download-flashscore-from-feed into feeds/. OpenFootball plaintext may list fewer fixtures than IDS; see openfootball_uefa_overlay ratios. Each download_openfootball allowlist run writes data/integrated/openfootball_source_status.json (urls_tried, url_resolved optional, unavailable vs ok). Fallback URLs: data/integrated/openfootball_url_fallbacks.json (by github season_folder and kind).After merge, classify remaining gaps with scripts/download_openfootball_allowlist.py --openfoot-miss-report data/integrated/openfootball_miss_latest.json (prints openfoot_no_hit_breakdown). Scripts: download_flashscore_integration_feeds.py, build_integration_supplement.py, download_openfootball_allowlist.py.",
+  "openfootball_plaintext_upstream": [
+    {
+      "season_folder_github": "2022-23",
+      "kind": "cl",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2022-23\\cl.txt",
+      "urls_tried": [],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2022-23/cl.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2022-23/cl.txt",
+      "url_resolved": null,
+      "status": "ok",
+      "source_channel": "local_cache",
+      "byte_length": 10387,
+      "parsed_match_row_count": 88
+    },
+    {
+      "season_folder_github": "2023-24",
+      "kind": "cl",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2023-24\\cl.txt",
+      "urls_tried": [],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2023-24/cl.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2023-24/cl.txt",
+      "url_resolved": null,
+      "status": "ok",
+      "source_channel": "local_cache",
+      "byte_length": 10418,
+      "parsed_match_row_count": 39
+    },
+    {
+      "season_folder_github": "2024-25",
+      "kind": "cl",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2024-25\\cl.txt",
+      "urls_tried": [],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2024-25/cl.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2024-25/cl.txt",
+      "url_resolved": null,
+      "status": "ok",
+      "source_channel": "local_cache",
+      "byte_length": 15360,
+      "parsed_match_row_count": 56
+    },
+    {
+      "season_folder_github": "2025-26",
+      "kind": "cl",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2025-26\\cl.txt",
+      "urls_tried": [],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/cl.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/cl.txt",
+      "url_resolved": null,
+      "status": "ok",
+      "source_channel": "local_cache",
+      "byte_length": 15444,
+      "parsed_match_row_count": 55
+    },
+    {
+      "season_folder_github": "2022-23",
+      "kind": "el",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2022-23\\el.txt",
+      "urls_tried": [],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2022-23/el.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2022-23/el.txt",
+      "url_resolved": null,
+      "status": "ok",
+      "source_channel": "local_cache",
+      "byte_length": 11629,
+      "parsed_match_row_count": 71
+    },
+    {
+      "season_folder_github": "2023-24",
+      "kind": "el",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2023-24\\el.txt",
+      "urls_tried": [],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2023-24/el.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2023-24/el.txt",
+      "url_resolved": null,
+      "status": "ok",
+      "source_channel": "local_cache",
+      "byte_length": 11610,
+      "parsed_match_row_count": 69
+    },
+    {
+      "season_folder_github": "2024-25",
+      "kind": "el",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2024-25\\el.txt",
+      "urls_tried": [],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2024-25/el.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2024-25/el.txt",
+      "url_resolved": null,
+      "status": "ok",
+      "source_channel": "local_cache",
+      "byte_length": 14588,
+      "parsed_match_row_count": 36
+    },
+    {
+      "season_folder_github": "2025-26",
+      "kind": "el",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2025-26\\el.txt",
+      "urls_tried": [
+        "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/el.txt",
+        "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/elq.txt"
+      ],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/el.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/el.txt",
+      "url_resolved": "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/elq.txt",
+      "status": "ok",
+      "source_channel": "fetched_remote",
+      "byte_length": 6470,
+      "parsed_match_row_count": 47
+    },
+    {
+      "season_folder_github": "2022-23",
+      "kind": "conf",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2022-23\\conf.txt",
+      "urls_tried": [],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2022-23/conf.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2022-23/conf.txt",
+      "url_resolved": null,
+      "status": "ok",
+      "source_channel": "local_cache",
+      "byte_length": 11616,
+      "parsed_match_row_count": 82
+    },
+    {
+      "season_folder_github": "2023-24",
+      "kind": "conf",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2023-24\\conf.txt",
+      "urls_tried": [],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2023-24/conf.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2023-24/conf.txt",
+      "url_resolved": null,
+      "status": "ok",
+      "source_channel": "local_cache",
+      "byte_length": 11702,
+      "parsed_match_row_count": 77
+    },
+    {
+      "season_folder_github": "2024-25",
+      "kind": "conf",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2024-25\\conf.txt",
+      "urls_tried": [],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2024-25/conf.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2024-25/conf.txt",
+      "url_resolved": null,
+      "status": "ok",
+      "source_channel": "local_cache",
+      "byte_length": 11941,
+      "parsed_match_row_count": 32
+    },
+    {
+      "season_folder_github": "2025-26",
+      "kind": "conf",
+      "local_relative_path": "data\\raw\\openfootball\\champions-league\\2025-26\\conf.txt",
+      "urls_tried": [
+        "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/conf.txt",
+        "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/confq.txt"
+      ],
+      "url_primary_template": "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/conf.txt",
+      "url_attempted": "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/conf.txt",
+      "url_resolved": "https://raw.githubusercontent.com/openfootball/champions-league/master/2025-26/confq.txt",
+      "status": "ok",
+      "source_channel": "fetched_remote",
+      "byte_length": 19712,
+      "parsed_match_row_count": 77
+    }
+  ],
+  "openfootball_uefa_overlay": {
+    "by_dataset_label": {
+      "liga_mistrzow-2223": {
+        "ids_event_count": 109,
+        "openfootball_distinct_event_ids": 16,
+        "openfootball_coverage_vs_ids_fraction": 0.1468,
+        "season_folder4": "2223"
+      },
+      "liga_mistrzow-2324": {
+        "ids_event_count": 109,
+        "openfootball_distinct_event_ids": 11,
+        "openfootball_coverage_vs_ids_fraction": 0.1009,
+        "season_folder4": "2324"
+      },
+      "liga_mistrzow-2425": {
+        "ids_event_count": 117,
+        "openfootball_distinct_event_ids": 15,
+        "openfootball_coverage_vs_ids_fraction": 0.1282,
+        "season_folder4": "2425"
+      },
+      "liga_mistrzow-2526": {
+        "ids_event_count": 116,
+        "openfootball_distinct_event_ids": 25,
+        "openfootball_coverage_vs_ids_fraction": 0.2155,
+        "season_folder4": "2526"
+      },
+      "liga_europy-2223": {
+        "ids_event_count": 125,
+        "openfootball_distinct_event_ids": 4,
+        "openfootball_coverage_vs_ids_fraction": 0.032,
+        "season_folder4": "2223"
+      },
+      "liga_europy-2324": {
+        "ids_event_count": 125,
+        "openfootball_distinct_event_ids": 9,
+        "openfootball_coverage_vs_ids_fraction": 0.072,
+        "season_folder4": "2324"
+      },
+      "liga_europy-2425": {
+        "ids_event_count": 134,
+        "openfootball_distinct_event_ids": 1,
+        "openfootball_coverage_vs_ids_fraction": 0.0075,
+        "season_folder4": "2425"
+      },
+      "liga_europy-2526": {
+        "ids_event_count": 134,
+        "openfootball_distinct_event_ids": 0,
+        "openfootball_coverage_vs_ids_fraction": 0.0,
+        "season_folder4": "2526"
+      },
+      "liga_konferencji-2223": {
+        "ids_event_count": 125,
+        "openfootball_distinct_event_ids": 4,
+        "openfootball_coverage_vs_ids_fraction": 0.032,
+        "season_folder4": "2223"
+      },
+      "liga_konferencji-2324": {
+        "ids_event_count": 125,
+        "openfootball_distinct_event_ids": 3,
+        "openfootball_coverage_vs_ids_fraction": 0.024,
+        "season_folder4": "2324"
+      },
+      "liga_konferencji-2425": {
+        "ids_event_count": 135,
+        "openfootball_distinct_event_ids": 5,
+        "openfootball_coverage_vs_ids_fraction": 0.037,
+        "season_folder4": "2425"
+      },
+      "liga_konferencji-2526": {
+        "ids_event_count": 134,
+        "openfootball_distinct_event_ids": 0,
+        "openfootball_coverage_vs_ids_fraction": 0.0,
+        "season_folder4": "2526"
+      }
+    },
+    "overall": {
+      "uefa_sum_ids_events": 1488,
+      "uefa_sum_openfootball_distinct_events": 93,
+      "openfootball_coverage_vs_ids_fraction": 0.0625
+    }
+  },
+  "football_data_manifest_bridge": {
+    "manifest_rows_total": 112,
+    "datasets_with_football_data_bridge_and_nonempty_csv": 48,
+    "datasets_excluded_from_football_data_join": 64,
+    "datasets_bridged_but_csv_missing_or_empty": 0,
+    "mmz_overlay_league_keys_configured": [],
+    "excluded_detail_sample": [
+      {
+        "dataset_label": "liga_mistrzow-2223",
+        "league_key": "liga_mistrzow",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_mistrzow-2324",
+        "league_key": "liga_mistrzow",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_mistrzow-2425",
+        "league_key": "liga_mistrzow",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_mistrzow-2526",
+        "league_key": "liga_mistrzow",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_europy-2223",
+        "league_key": "liga_europy",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_europy-2324",
+        "league_key": "liga_europy",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_europy-2425",
+        "league_key": "liga_europy",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_europy-2526",
+        "league_key": "liga_europy",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_konferencji-2223",
+        "league_key": "liga_konferencji",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_konferencji-2324",
+        "league_key": "liga_konferencji",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_konferencji-2425",
+        "league_key": "liga_konferencji",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "liga_konferencji-2526",
+        "league_key": "liga_konferencji",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "puchar_polski-2223",
+        "league_key": "puchar_polski",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "puchar_polski-2324",
+        "league_key": "puchar_polski",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "puchar_polski-2425",
+        "league_key": "puchar_polski",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "puchar_polski-2526",
+        "league_key": "puchar_polski",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "puchar_czech-2223",
+        "league_key": "puchar_czech",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "puchar_czech-2324",
+        "league_key": "puchar_czech",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "puchar_czech-2425",
+        "league_key": "puchar_czech",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "puchar_czech-2526",
+        "league_key": "puchar_czech",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "taca_de_portugal-2223",
+        "league_key": "taca_de_portugal",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "taca_de_portugal-2324",
+        "league_key": "taca_de_portugal",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "taca_de_portugal-2425",
+        "league_key": "taca_de_portugal",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "taca_de_portugal-2526",
+        "league_key": "taca_de_portugal",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      },
+      {
+        "dataset_label": "copa_del_rey-2223",
+        "league_key": "copa_del_rey",
+        "reason": "not in LEAG_KEY_TO_CLI / ekstraklasa / data/integrated/football_data_manifest_mmz_overlay.json"
+      }
+    ],
+    "csv_missing_detail_sample": []
+  },
+  "football_data_integration_scope": {
+    "included_in_build_integration_supplement": "domestic leagues mapped in join_football_data.LEAG_KEY_TO_CLI plus Poland Ekstraklasa POL aggregation plus optional leagues in data/integrated/football_data_manifest_mmz_overlay.json (MMZ filename stem)",
+    "excluded": "UEFA (liga_* manifest keys): no bundled football-data MMZ analogue; overlays may still target cups via the JSON map after manual URL validation."
+  },
+  "supplement_match_identity": {
+    "rows_with_nonempty_match_uid": 127,
+    "distinct_match_uid": 127,
+    "match_uids_with_both_fd_and_openfootball": 0,
+    "rows_with_nonempty_fixture_uid": 127,
+    "distinct_fixture_uid": 127,
+    "fixture_uids_collision_distinct_dataset_count_gt1": 0,
+    "fixture_uids_domestic_non_uefa_dataset_with_fd_and_openfootball": 0,
+    "match_uid_dual_metric_note": "match_uid includes dataset_label in the hash (see match_identity.compute_match_uid). UEFA supplement rows use liga_mistrzow-* etc.; football-data rows use premier_league-* etc. The pipeline never writes both sources for the same dataset_label, so match_uids_with_both_fd_and_openfootball is expected to be 0; it is not a global integration KPI.",
+    "fixture_uid_cross_source_note": "fixture_uid is UTC calendar date plus norm_club home/away (see compute_fixture_uid). It may collide across unrelated same-day fixtures—fixture_uid KPIs exclude UEFA dataset GLOB liga_* when reporting domestic FD+OF co-occurrence.",
+    "experimental_cross_source_date_norm_pair": {
+      "distinct_date_pair_keys_with_both_fd_and_openfootball": 0,
+      "disclaimer": "Experimental cross-competition proxy: same UTC calendar date and same sorted norm_club pair with at least one football-data row and one openfootball row. Can double-count or mis-link (e.g. domestic vs European fixture same names)."
+    }
+  },
+  "domestic_cups_seed_html_and_raw_fractions": {
+    "by_dataset_label": {
+      "puchar_polski-2223": {
+        "league_key": "puchar_polski",
+        "season_folder4": "2223",
+        "ids_txt_stem": "puchar_polski_2223",
+        "ids_event_count": 69,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_polski_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.8551,
+        "raw_fraction_with_nonempty_df_li": 0.8551
+      },
+      "puchar_polski-2324": {
+        "league_key": "puchar_polski",
+        "season_folder4": "2324",
+        "ids_txt_stem": "puchar_polski_2324",
+        "ids_event_count": 69,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_polski_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.8986,
+        "raw_fraction_with_nonempty_df_li": 0.8551
+      },
+      "puchar_polski-2425": {
+        "league_key": "puchar_polski",
+        "season_folder4": "2425",
+        "ids_txt_stem": "puchar_polski_2425",
+        "ids_event_count": 69,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_polski_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.8986,
+        "raw_fraction_with_nonempty_df_li": 0.8551
+      },
+      "puchar_polski-2526": {
+        "league_key": "puchar_polski",
+        "season_folder4": "2526",
+        "ids_txt_stem": "puchar_polski_2526",
+        "ids_event_count": 69,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_polski_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.8696,
+        "raw_fraction_with_nonempty_df_li": 0.8406
+      },
+      "puchar_czech-2223": {
+        "league_key": "puchar_czech",
+        "season_folder4": "2223",
+        "ids_txt_stem": "puchar_czech_2223",
+        "ids_event_count": 103,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_czech_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5631,
+        "raw_fraction_with_nonempty_df_li": 0.5631
+      },
+      "puchar_czech-2324": {
+        "league_key": "puchar_czech",
+        "season_folder4": "2324",
+        "ids_txt_stem": "puchar_czech_2324",
+        "ids_event_count": 116,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_czech_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5259,
+        "raw_fraction_with_nonempty_df_li": 0.5
+      },
+      "puchar_czech-2425": {
+        "league_key": "puchar_czech",
+        "season_folder4": "2425",
+        "ids_txt_stem": "puchar_czech_2425",
+        "ids_event_count": 104,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_czech_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5673,
+        "raw_fraction_with_nonempty_df_li": 0.5577
+      },
+      "puchar_czech-2526": {
+        "league_key": "puchar_czech",
+        "season_folder4": "2526",
+        "ids_txt_stem": "puchar_czech_2526",
+        "ids_event_count": 124,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_czech_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5323,
+        "raw_fraction_with_nonempty_df_li": 0.4516
+      },
+      "taca_de_portugal-2223": {
+        "league_key": "taca_de_portugal",
+        "season_folder4": "2223",
+        "ids_txt_stem": "taca_de_portugal_2223",
+        "ids_event_count": 148,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\taca_de_portugal_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5473,
+        "raw_fraction_with_nonempty_df_li": 0.4324
+      },
+      "taca_de_portugal-2324": {
+        "league_key": "taca_de_portugal",
+        "season_folder4": "2324",
+        "ids_txt_stem": "taca_de_portugal_2324",
+        "ids_event_count": 111,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\taca_de_portugal_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.7117,
+        "raw_fraction_with_nonempty_df_li": 0.5856
+      },
+      "taca_de_portugal-2425": {
+        "league_key": "taca_de_portugal",
+        "season_folder4": "2425",
+        "ids_txt_stem": "taca_de_portugal_2425",
+        "ids_event_count": 110,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\taca_de_portugal_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.7273,
+        "raw_fraction_with_nonempty_df_li": 0.5727
+      },
+      "taca_de_portugal-2526": {
+        "league_key": "taca_de_portugal",
+        "season_folder4": "2526",
+        "ids_txt_stem": "taca_de_portugal_2526",
+        "ids_event_count": 112,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\taca_de_portugal_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.6964,
+        "raw_fraction_with_nonempty_df_li": 0.5714
+      },
+      "copa_del_rey-2223": {
+        "league_key": "copa_del_rey",
+        "season_folder4": "2223",
+        "ids_txt_stem": "copa_del_rey_2223",
+        "ids_event_count": 126,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\copa_del_rey_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.9127,
+        "raw_fraction_with_nonempty_df_li": 0.9206
+      },
+      "copa_del_rey-2324": {
+        "league_key": "copa_del_rey",
+        "season_folder4": "2324",
+        "ids_txt_stem": "copa_del_rey_2324",
+        "ids_event_count": 116,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\copa_del_rey_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.9828,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "copa_del_rey-2425": {
+        "league_key": "copa_del_rey",
+        "season_folder4": "2425",
+        "ids_txt_stem": "copa_del_rey_2425",
+        "ids_event_count": 116,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\copa_del_rey_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.9828,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "copa_del_rey-2526": {
+        "league_key": "copa_del_rey",
+        "season_folder4": "2526",
+        "ids_txt_stem": "copa_del_rey_2526",
+        "ids_event_count": 127,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\copa_del_rey_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.9291,
+        "raw_fraction_with_nonempty_df_li": 0.9213
+      },
+      "coppa_italia-2223": {
+        "league_key": "coppa_italia",
+        "season_folder4": "2223",
+        "ids_txt_stem": "coppa_italia_2223",
+        "ids_event_count": 45,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\coppa_italia_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "coppa_italia-2324": {
+        "league_key": "coppa_italia",
+        "season_folder4": "2324",
+        "ids_txt_stem": "coppa_italia_2324",
+        "ids_event_count": 45,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\coppa_italia_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "coppa_italia-2425": {
+        "league_key": "coppa_italia",
+        "season_folder4": "2425",
+        "ids_txt_stem": "coppa_italia_2425",
+        "ids_event_count": 45,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\coppa_italia_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "coppa_italia-2526": {
+        "league_key": "coppa_italia",
+        "season_folder4": "2526",
+        "ids_txt_stem": "coppa_italia_2526",
+        "ids_event_count": 45,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\coppa_italia_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 0.9778
+      },
+      "fa_cup-2223": {
+        "league_key": "fa_cup",
+        "season_folder4": "2223",
+        "ids_txt_stem": "fa_cup_2223",
+        "ids_event_count": 106,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\fa_cup_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "fa_cup-2324": {
+        "league_key": "fa_cup",
+        "season_folder4": "2324",
+        "ids_txt_stem": "fa_cup_2324",
+        "ids_event_count": 109,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\fa_cup_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "fa_cup-2425": {
+        "league_key": "fa_cup",
+        "season_folder4": "2425",
+        "ids_txt_stem": "fa_cup_2425",
+        "ids_event_count": 123,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\fa_cup_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.9919,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "fa_cup-2526": {
+        "league_key": "fa_cup",
+        "season_folder4": "2526",
+        "ids_txt_stem": "fa_cup_2526",
+        "ids_event_count": 130,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\fa_cup_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.9769,
+        "raw_fraction_with_nonempty_df_li": 0.9385
+      },
+      "carabao_cup-2223": {
+        "league_key": "carabao_cup",
+        "season_folder4": "2223",
+        "ids_txt_stem": "carabao_cup_2223",
+        "ids_event_count": 93,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\carabao_cup_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "carabao_cup-2324": {
+        "league_key": "carabao_cup",
+        "season_folder4": "2324",
+        "ids_txt_stem": "carabao_cup_2324",
+        "ids_event_count": 93,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\carabao_cup_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "carabao_cup-2425": {
+        "league_key": "carabao_cup",
+        "season_folder4": "2425",
+        "ids_txt_stem": "carabao_cup_2425",
+        "ids_event_count": 93,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\carabao_cup_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "carabao_cup-2526": {
+        "league_key": "carabao_cup",
+        "season_folder4": "2526",
+        "ids_txt_stem": "carabao_cup_2526",
+        "ids_event_count": 93,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\carabao_cup_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "dfb_pokal-2223": {
+        "league_key": "dfb_pokal",
+        "season_folder4": "2223",
+        "ids_txt_stem": "dfb_pokal_2223",
+        "ids_event_count": 63,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\dfb_pokal_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "dfb_pokal-2324": {
+        "league_key": "dfb_pokal",
+        "season_folder4": "2324",
+        "ids_txt_stem": "dfb_pokal_2324",
+        "ids_event_count": 63,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\dfb_pokal_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "dfb_pokal-2425": {
+        "league_key": "dfb_pokal",
+        "season_folder4": "2425",
+        "ids_txt_stem": "dfb_pokal_2425",
+        "ids_event_count": 63,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\dfb_pokal_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 1.0,
+        "raw_fraction_with_nonempty_df_li": 1.0
+      },
+      "dfb_pokal-2526": {
+        "league_key": "dfb_pokal",
+        "season_folder4": "2526",
+        "ids_txt_stem": "dfb_pokal_2526",
+        "ids_event_count": 63,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\dfb_pokal_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.9841,
+        "raw_fraction_with_nonempty_df_li": 0.9841
+      },
+      "coupe_de_france-2223": {
+        "league_key": "coupe_de_france",
+        "season_folder4": "2223",
+        "ids_txt_stem": "coupe_de_france_2223",
+        "ids_event_count": 107,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\coupe_de_france_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.6262,
+        "raw_fraction_with_nonempty_df_li": 0.5888
+      },
+      "coupe_de_france-2324": {
+        "league_key": "coupe_de_france",
+        "season_folder4": "2324",
+        "ids_txt_stem": "coupe_de_france_2324",
+        "ids_event_count": 111,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\coupe_de_france_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5766,
+        "raw_fraction_with_nonempty_df_li": 0.5676
+      },
+      "coupe_de_france-2425": {
+        "league_key": "coupe_de_france",
+        "season_folder4": "2425",
+        "ids_txt_stem": "coupe_de_france_2425",
+        "ids_event_count": 108,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\coupe_de_france_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.6574,
+        "raw_fraction_with_nonempty_df_li": 0.5741
+      },
+      "coupe_de_france-2526": {
+        "league_key": "coupe_de_france",
+        "season_folder4": "2526",
+        "ids_txt_stem": "coupe_de_france_2526",
+        "ids_event_count": 109,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\coupe_de_france_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.6147,
+        "raw_fraction_with_nonempty_df_li": 0.5688
+      },
+      "knvb_beker-2223": {
+        "league_key": "knvb_beker",
+        "season_folder4": "2223",
+        "ids_txt_stem": "knvb_beker_2223",
+        "ids_event_count": 85,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\knvb_beker_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.7294,
+        "raw_fraction_with_nonempty_df_li": 0.6824
+      },
+      "knvb_beker-2324": {
+        "league_key": "knvb_beker",
+        "season_folder4": "2324",
+        "ids_txt_stem": "knvb_beker_2324",
+        "ids_event_count": 109,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\knvb_beker_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5321,
+        "raw_fraction_with_nonempty_df_li": 0.5321
+      },
+      "knvb_beker-2425": {
+        "league_key": "knvb_beker",
+        "season_folder4": "2425",
+        "ids_txt_stem": "knvb_beker_2425",
+        "ids_event_count": 109,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\knvb_beker_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5138,
+        "raw_fraction_with_nonempty_df_li": 0.5229
+      },
+      "knvb_beker-2526": {
+        "league_key": "knvb_beker",
+        "season_folder4": "2526",
+        "ids_txt_stem": "knvb_beker_2526",
+        "ids_event_count": 109,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\knvb_beker_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5872,
+        "raw_fraction_with_nonempty_df_li": 0.5229
+      },
+      "puchar_belgii-2223": {
+        "league_key": "puchar_belgii",
+        "season_folder4": "2223",
+        "ids_txt_stem": "puchar_belgii_2223",
+        "ids_event_count": 121,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_belgii_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.2562,
+        "raw_fraction_with_nonempty_df_li": 0.2727
+      },
+      "puchar_belgii-2324": {
+        "league_key": "puchar_belgii",
+        "season_folder4": "2324",
+        "ids_txt_stem": "puchar_belgii_2324",
+        "ids_event_count": 109,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_belgii_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.3028,
+        "raw_fraction_with_nonempty_df_li": 0.3028
+      },
+      "puchar_belgii-2425": {
+        "league_key": "puchar_belgii",
+        "season_folder4": "2425",
+        "ids_txt_stem": "puchar_belgii_2425",
+        "ids_event_count": 153,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_belgii_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.2157,
+        "raw_fraction_with_nonempty_df_li": 0.2157
+      },
+      "puchar_belgii-2526": {
+        "league_key": "puchar_belgii",
+        "season_folder4": "2526",
+        "ids_txt_stem": "puchar_belgii_2526",
+        "ids_event_count": 33,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_belgii_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.9697,
+        "raw_fraction_with_nonempty_df_li": 0.9697
+      },
+      "puchar_grecji-2223": {
+        "league_key": "puchar_grecji",
+        "season_folder4": "2223",
+        "ids_txt_stem": "puchar_grecji_2223",
+        "ids_event_count": 97,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_grecji_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.3918,
+        "raw_fraction_with_nonempty_df_li": 0.4021
+      },
+      "puchar_grecji-2324": {
+        "league_key": "puchar_grecji",
+        "season_folder4": "2324",
+        "ids_txt_stem": "puchar_grecji_2324",
+        "ids_event_count": 92,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_grecji_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.3913,
+        "raw_fraction_with_nonempty_df_li": 0.4022
+      },
+      "puchar_grecji-2425": {
+        "league_key": "puchar_grecji",
+        "season_folder4": "2425",
+        "ids_txt_stem": "puchar_grecji_2425",
+        "ids_event_count": 93,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_grecji_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.4624,
+        "raw_fraction_with_nonempty_df_li": 0.4409
+      },
+      "puchar_grecji-2526": {
+        "league_key": "puchar_grecji",
+        "season_folder4": "2526",
+        "ids_txt_stem": "puchar_grecji_2526",
+        "ids_event_count": 64,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_grecji_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.8125,
+        "raw_fraction_with_nonempty_df_li": 0.8281
+      },
+      "puchar_turcji-2223": {
+        "league_key": "puchar_turcji",
+        "season_folder4": "2223",
+        "ids_txt_stem": "puchar_turcji_2223",
+        "ids_event_count": 123,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_turcji_2223_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5366,
+        "raw_fraction_with_nonempty_df_li": 0.4797
+      },
+      "puchar_turcji-2324": {
+        "league_key": "puchar_turcji",
+        "season_folder4": "2324",
+        "ids_txt_stem": "puchar_turcji_2324",
+        "ids_event_count": 120,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_turcji_2324_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5167,
+        "raw_fraction_with_nonempty_df_li": 0.5083
+      },
+      "puchar_turcji-2425": {
+        "league_key": "puchar_turcji",
+        "season_folder4": "2425",
+        "ids_txt_stem": "puchar_turcji_2425",
+        "ids_event_count": 126,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_turcji_2425_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.5556,
+        "raw_fraction_with_nonempty_df_li": 0.4921
+      },
+      "puchar_turcji-2526": {
+        "league_key": "puchar_turcji",
+        "season_folder4": "2526",
+        "ids_txt_stem": "puchar_turcji_2526",
+        "ids_event_count": 130,
+        "seed_wyniki_html_path_expected": "data\\raw\\flashscore\\seed_results\\puchar_turcji_2526_wyniki.html",
+        "seed_wyniki_html_exists_nonempty": true,
+        "aa_meta_rich_coverage_fraction_seed_html_only": 1.0,
+        "ids_without_rich_meta_in_seed_sample": null,
+        "raw_fraction_with_nonempty_df_sui_and_df_st": 0.6,
+        "raw_fraction_with_nonempty_df_li": 0.5538
+      }
+    },
+    "metric_note": "aa_meta_rich_coverage_fraction_seed_html_only intersects IDS with iter_match_meta_from_feed(parsed seed); build_integration_supplement loads mega-feeds before augment_meta_index_from_seed_html — final meta_ix differs.",
+    "sqlite_hints": "-- supplement.sqlite: domestic cups by dataset prefix\nSELECT substr(dataset, 1, 30) ds, COUNT(*), COUNT(DISTINCT event_id)\nFROM supplement\nWHERE dataset LIKE 'fa_cup-%'\n   OR dataset LIKE 'carabao_cup-%'\nGROUP BY 1 ORDER BY 2 DESC;\nSELECT DISTINCT source FROM supplement WHERE dataset LIKE 'fa_cup-%' OR dataset LIKE 'carabao_cup-%' LIMIT 20;"
+  },
+  "fa_cup_carabao_jalapic_index_snapshot": {
+    "by_dataset_label": {
+      "fa_cup-2223": {
+        "cup_kind_jalapic": "facup",
+        "jalapic_csv_path": "C:\\Users\\Iwan\\Desktop\\AI Pewniaczek\\data\\raw\\engsoccerdata\\cups\\facup.csv",
+        "jalapic_csv_nonempty_on_disk": true,
+        "season_start_year": 2022,
+        "indexed_key_bucket_count": 0,
+        "indexed_non_empty_for_season": false
+      },
+      "fa_cup-2324": {
+        "cup_kind_jalapic": "facup",
+        "jalapic_csv_path": "C:\\Users\\Iwan\\Desktop\\AI Pewniaczek\\data\\raw\\engsoccerdata\\cups\\facup.csv",
+        "jalapic_csv_nonempty_on_disk": true,
+        "season_start_year": 2023,
+        "indexed_key_bucket_count": 0,
+        "indexed_non_empty_for_season": false
+      },
+      "fa_cup-2425": {
+        "cup_kind_jalapic": "facup",
+        "jalapic_csv_path": "C:\\Users\\Iwan\\Desktop\\AI Pewniaczek\\data\\raw\\engsoccerdata\\cups\\facup.csv",
+        "jalapic_csv_nonempty_on_disk": true,
+        "season_start_year": 2024,
+        "indexed_key_bucket_count": 0,
+        "indexed_non_empty_for_season": false
+      },
+      "fa_cup-2526": {
+        "cup_kind_jalapic": "facup",
+        "jalapic_csv_path": "C:\\Users\\Iwan\\Desktop\\AI Pewniaczek\\data\\raw\\engsoccerdata\\cups\\facup.csv",
+        "jalapic_csv_nonempty_on_disk": true,
+        "season_start_year": 2025,
+        "indexed_key_bucket_count": 0,
+        "indexed_non_empty_for_season": false
+      },
+      "carabao_cup-2223": {
+        "cup_kind_jalapic": "leaguecup",
+        "jalapic_csv_path": "C:\\Users\\Iwan\\Desktop\\AI Pewniaczek\\data\\raw\\engsoccerdata\\cups\\leaguecup.csv",
+        "jalapic_csv_nonempty_on_disk": true,
+        "season_start_year": 2022,
+        "indexed_key_bucket_count": 0,
+        "indexed_non_empty_for_season": false
+      },
+      "carabao_cup-2324": {
+        "cup_kind_jalapic": "leaguecup",
+        "jalapic_csv_path": "C:\\Users\\Iwan\\Desktop\\AI Pewniaczek\\data\\raw\\engsoccerdata\\cups\\leaguecup.csv",
+        "jalapic_csv_nonempty_on_disk": true,
+        "season_start_year": 2023,
+        "indexed_key_bucket_count": 0,
+        "indexed_non_empty_for_season": false
+      },
+      "carabao_cup-2425": {
+        "cup_kind_jalapic": "leaguecup",
+        "jalapic_csv_path": "C:\\Users\\Iwan\\Desktop\\AI Pewniaczek\\data\\raw\\engsoccerdata\\cups\\leaguecup.csv",
+        "jalapic_csv_nonempty_on_disk": true,
+        "season_start_year": 2024,
+        "indexed_key_bucket_count": 0,
+        "indexed_non_empty_for_season": false
+      },
+      "carabao_cup-2526": {
+        "cup_kind_jalapic": "leaguecup",
+        "jalapic_csv_path": "C:\\Users\\Iwan\\Desktop\\AI Pewniaczek\\data\\raw\\engsoccerdata\\cups\\leaguecup.csv",
+        "jalapic_csv_nonempty_on_disk": true,
+        "season_start_year": 2025,
+        "indexed_key_bucket_count": 0,
+        "indexed_non_empty_for_season": false
+      }
+    },
+    "note": "Empty buckets for sy>=2022 with current jalapic CSVs is expected."
+  }
+}

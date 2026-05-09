@@ -1,0 +1,43 @@
+Zweryfikowane 2026-05-06 (repo jalapic/engsoccerdata, gałąź master):
+  FA Cup CSV: https://raw.githubusercontent.com/jalapic/engsoccerdata/master/data-raw/facup.csv
+    (historia od 1871; w pliku są m.in. rundy, replay, karne; ostatnia linie w pliku —
+    maj 2019, kolumna Season=2018, czyli rozgrywki FA Cup 2018/19).
+  EFL/League Cup CSV: https://raw.githubusercontent.com/jalapic/engsoccerdata/master/data-raw/leaguecup.csv
+    (od 1960; finał lut 2019, Season 2018). Dodatkowy plik testowy: data-raw/leagucuptest.csv.
+  Uwaga: to nie są pliki Buchdahl/MMZ — kolumny (Date, Season, home, visitor, FT, hgoal…)
+  są inne niż football-data.co.uk CSV; nakład MMZ przez football_data_manifest_mmz_overlay.json
+  tu nie pasuje bez osobnego adaptera / pipeline’u.
+
+Zweryfikowane 2026-05-07 (przegląd stron football-data.co.uk):
+- englandm.php, germanym.php, netherlandm.php, scotlandm.php, spainm.php, italym.php,
+  portugalm.php, belgiumm.php, greecem.php, francem.php, turkeym.php — w sekcjach MMZ
+  wymienione są głównie ligi (E0–E3, D1–D2, SC0–SC3, SP1, itd.), bez osobnych CSV
+  typu FA Cup / Copa / DFB-Pokal / KNVB Beker.
+- Dlatego football_data_manifest_mmz_overlay.json pozostaje pusty, dopóki nie zweryfikujesz
+  zewnętrznego źródła lub innej ścieżki na tej samej domenie (np. z data.php / sekcji
+  „extra”, jeśli pojawią się linkowane pliki pucharów pod znanym kodem pliku).
+
+2026-05-08 — kontrakt na przyszłe źródło FA Cup / EFL Cup (season folder 2223+):
+  build_integration_supplement łączy Flashscore AA-meta (unix_kickoff, home_team, away_team)
+  przez lookup_* do wierszy indeksowanych jak football-data / jalapic (data rozgrywki + nazwy klubów).
+  Nowe CSV dla lat bez jalapic: spójne kolumny daty lub parsowanie po ISO/DD/MM/YYYY, normalizacja nazw jak
+  norm_club dla kluczy joinu; opcjonalnie osobny moduł indeksujący (jak engsoccerdata_cup_index) zamiast
+  kombinacji z MMZ-overlay, dopóki football-data nie opublikuje czytelnych kodów plików pucharów pod MMZ.
+
+Operacyjnie: KPI kubków (IDS, RAW df_*, seed *_wyniki.html) są w scripts/integration_coverage.py →
+coverage_latest.json (schema_version „2”, sekcje domestic_* i fa_cup_carabao_jalapic_*); retry HTML —
+scripts/retry_cup_wyniki_backfill.py; jedna definicja slugów kubków — src/football_ai/integration/domestic_cup_flashscore.py.
+
+2026-05-06 — mirror footballcsv/cache.footballdata (Buchdahl zawartość, ale inny CSV layout):
+  https://github.com/footballcsv/cache.footballdata — katalog „YYYY-YY” + pliki jak eng.1.csv;
+  nagłówki Date, Team 1, Team 2 (nie MMZ HomeTeam/AwayTeam). To jest trzecie lustro/opóźnienie względem
+  bezpośredniego pobrania z football-data.co.uk; Czech Chance Liga (C1) nie ma odpowiednika w repo cache.
+  Pobieranie wyłącznie potrzebnych plików: python scripts/download_cache_footballdata_mirror.py
+  Join gdy brak lokalnego MMZ: python scripts/build_integration_supplement.py --footballcsv-cache-fallback
+  W supplement source tag dla wierszy z lustra zaczyna się „footballcsv-cache-footballdata:“ (PK SQLite to
+  dataset+event_id+source — osobny wiersz niż przy football-data.co.uk z tego samego meczu). FA/Carabao bez zmian — ten kanał nie uzupełnia jalapic.
+
+2026-05-06 — plan „meta_gap Tier-1’’ Faza C (weryfikacja per sezon, bez zmian kodu overlay):
+  - data/raw/football-data.co.uk/ — foldery 2223, 2324, 2425, 2526: w repo są wyłącznie pliki o kodach lig MMZ (E0, SP1, I1, D1, …, C1) pobrane dla lig europejskich — brak dedykowanego Buchdahl CSV dla FA Cup / League Cup w tym layoutcie.
+  - Kod C1 to w projekcie Czech Chance Liga (CZE1 w football_ai.cli.FOOTBALL_DATA_LEAGUES); nie traktować jako kod FA Cup.
+  - Overlay no-go: football_data_manifest_mmz_overlay.json nadal {}, dopóki nie ma pewnego kodu/nagłówków MMZ lub innego zweryfikowanego źródła dla wszystkich wymaganych sezonów pucharowych (alternatywa: osobny indeks typu jalapic lub API).

@@ -15,6 +15,9 @@ class FootballDataLeague:
 
 FOOTBALL_DATA_BASE = "https://www.football-data.co.uk/mmz4281"
 
+# Consolidated Poland Ekstraklasa (many seasons); not under mmz4281/{season}/.
+POLAND_HISTORICAL_CSV_URL = "https://www.football-data.co.uk/new/POL.csv"
+
 
 def _season_path(season: str) -> str:
     """
@@ -54,7 +57,7 @@ def download_results_csv(
 
     status, content, final_url = http.get(url)
     filename = f"{league.code}.csv"
-    subdir = f"football-data.co.uk/{_season_path(season)}"
+    subdir = _season_path(season)
     storage.save_bytes(
         source="football-data.co.uk",
         kind="csv",
@@ -63,5 +66,27 @@ def download_results_csv(
         content=content,
         filename=filename,
         subdir=subdir,
+    )
+
+
+def download_poland_consolidated_csv(
+    *,
+    storage: Storage,
+    http: HttpClient,
+    force: bool = False,
+) -> None:
+    """All-season Ekstraklasa + odds CSV from football-data `new/` tree."""
+    url = POLAND_HISTORICAL_CSV_URL
+    if (not force) and storage.has_url("football-data.co.uk", url):
+        return
+    status, content, final_url = http.get(url)
+    storage.save_bytes(
+        source="football-data.co.uk",
+        kind="csv",
+        url=final_url,
+        status_code=status,
+        content=content,
+        filename="POL.csv",
+        subdir="new",
     )
 

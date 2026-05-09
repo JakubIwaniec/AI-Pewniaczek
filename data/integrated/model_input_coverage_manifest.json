@@ -1,0 +1,141 @@
+{
+  "schema_version": "1",
+  "manifest_revision": "2026-05-09c",
+  "slots": [
+    {
+      "id": "flash_df_st_nonempty",
+      "label_pl": "Surowy feed statystyk meczu (df_st) — plik obecny i niezerowy rozmiar",
+      "category": "flash_raw",
+      "counts_toward_coverage": "primitive",
+      "weight": 1.0,
+      "included_in_global": true,
+      "probe": "flash_nonempty",
+      "probe_args": {"feed_suffix": "df_st"}
+    },
+    {
+      "id": "flash_df_li_nonempty",
+      "label_pl": "Surowy feed składu XI (df_li) — plik obecny i niezerowy rozmiar",
+      "category": "flash_raw",
+      "counts_toward_coverage": "primitive",
+      "weight": 1.0,
+      "included_in_global": true,
+      "probe": "flash_nonempty",
+      "probe_args": {"feed_suffix": "df_li"}
+    },
+    {
+      "id": "flash_df_sui_nonempty",
+      "label_pl": "Surowy feed summaries (df_sui) — plik obecny i niezerowy rozmiar",
+      "category": "flash_raw",
+      "counts_toward_coverage": "primitive",
+      "weight": 1.0,
+      "included_in_global": true,
+      "probe": "flash_nonempty",
+      "probe_args": {"feed_suffix": "df_sui"}
+    },
+    {
+      "id": "meta_kickoff_present",
+      "label_pl": "Znany unix kickoff w indeksie meta (mega-feed lub seed HTML)",
+      "category": "flash_meta",
+      "counts_toward_coverage": "primitive",
+      "weight": 1.0,
+      "included_in_global": true,
+      "probe": "meta_has_kickoff",
+      "probe_args": {}
+    },
+    {
+      "id": "supplement_any_fd_like_row",
+      "label_pl": "Join do wiersza football-data lub footballcsv-cache mirror (SQLite supplement)",
+      "category": "enrichment_join",
+      "counts_toward_coverage": "primitive",
+      "weight": 0.0,
+      "included_in_global": false,
+      "probe": "supplement_any_fd_like_row",
+      "probe_args": {}
+    },
+    {
+      "id": "supplement_row_source_football_data_co_uk",
+      "label_pl": "Supplement źródła football-data.co.uk (Joseph Buchdahl layout / CSV główny)",
+      "category": "enrichment_join_channel",
+      "counts_toward_coverage": "informational",
+      "weight": 0.0,
+      "included_in_global": false,
+      "probe": "supplement_bucket_hit",
+      "probe_args": {"bucket": "football_data_co_uk"}
+    },
+    {
+      "id": "supplement_row_source_mirror_cache_footballdata",
+      "label_pl": "Supplement ze źródła mirror footballcsv/cache.footballdata (inne kolumny CSV; treść zbliżona Buchdahl)",
+      "category": "enrichment_join_channel",
+      "counts_toward_coverage": "informational",
+      "weight": 0.0,
+      "included_in_global": false,
+      "probe": "supplement_bucket_hit",
+      "probe_args": {"bucket": "mirror"}
+    },
+    {
+      "id": "supplement_row_source_engsoccerdata_cups",
+      "label_pl": "Supplement źródeł jalapic/engsoccerdata (FACup / League Cup)",
+      "category": "enrichment_join_channel",
+      "counts_toward_coverage": "informational",
+      "weight": 0.0,
+      "included_in_global": false,
+      "probe": "supplement_bucket_hit",
+      "probe_args": {"bucket": "engsoccerdata"}
+    },
+    {
+      "id": "df_st_contains_common_lexemes_heuristic",
+      "label_pl": "Pomocniczo: df_st przez leksy EN (latin1+case-fold). Do sygnału struktury AA użyj slotu df_st_aa_score_counter_markers_any (delimiter ¬KEY÷).",
+      "category": "flash_raw_semantics_heuristic",
+      "counts_toward_coverage": "informational",
+      "weight": 0.0,
+      "included_in_global": false,
+      "probe": "flash_contains_any",
+      "probe_args": {
+        "feed_suffix": "df_st",
+        "case_insensitive": true,
+        "max_scan_bytes": 524288,
+        "substrings": ["corner", "foul", "shot", "yellow", "red card"]
+      }
+    },
+    {
+      "id": "df_li_aa_entity_markers_any",
+      "label_pl": "Proxy struktury AA w df_li: obecny dowolny z markerów pola ¬PX÷ lub ¬PY÷ (UTF-8 lub latin1). Klucze dobrane jak w list-feed w repo — nie gwarantuje pełnego składu.",
+      "category": "flash_raw_aa_proxy",
+      "counts_toward_coverage": "informational",
+      "weight": 0.0,
+      "included_in_global": false,
+      "probe": "flash_aa_field_key_any",
+      "probe_args": {
+        "feed_suffix": "df_li",
+        "match_policy": "any",
+        "max_scan_bytes": 524288,
+        "field_keys": ["PX", "PY"]
+      }
+    },
+    {
+      "id": "df_st_aa_score_counter_markers_any",
+      "label_pl": "Proxy AA w df_st: którykolwiek z markerów ¬AG÷, ¬AH÷, ¬BC÷ lub ¬BD÷ (jak w blokach próbek repo); bez twierdzeń o kartkach ani pełnym feedzie.",
+      "category": "flash_raw_aa_proxy",
+      "counts_toward_coverage": "informational",
+      "weight": 0.0,
+      "included_in_global": false,
+      "probe": "flash_aa_field_key_any",
+      "probe_args": {
+        "feed_suffix": "df_st",
+        "match_policy": "any",
+        "max_scan_bytes": 524288,
+        "field_keys": ["AG", "AH", "BC", "BD"]
+      }
+    },
+    {
+      "id": "ontology_dataset_known",
+      "label_pl": "Zbiór IDS/manifest dla dataset jest znany strukturalnie (tautologia manifeście)",
+      "category": "structural_informational",
+      "counts_toward_coverage": "informational",
+      "weight": 0.0,
+      "included_in_global": false,
+      "probe": "always_true_in_manifest_iteration",
+      "probe_args": {}
+    }
+  ]
+}

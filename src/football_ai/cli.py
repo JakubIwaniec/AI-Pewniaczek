@@ -32,6 +32,7 @@ FOOTBALL_DATA_LEAGUES = {
     "BEL1": FootballDataLeague(code="B1", name="Belgian Pro League"),
     "TUR1": FootballDataLeague(code="T1", name="Süper Lig"),
     "GRE1": FootballDataLeague(code="G1", name="Super League Greece"),
+    "CZE1": FootballDataLeague(code="C1", name="Czech Chance Liga"),
 }
 
 
@@ -99,13 +100,31 @@ def build_parser() -> argparse.ArgumentParser:
         help="Use headless browser to collect match IDs from a results page",
     )
     collect_ids.add_argument("--url", required=True, help="Tournament results URL")
-    collect_ids.add_argument("--out", required=True, help="Output .txt file path")
+    collect_ids.add_argument(
+        "--out",
+        default=None,
+        help="Output .txt file path (optional if only saving --wyniki-html-out)",
+    )
+    collect_ids.add_argument(
+        "--wyniki-html-out",
+        default=None,
+        metavar="PATH",
+        help=(
+            "Write full rendered results page HTML here (embedded ~AA÷ for supplement seed), "
+            "e.g. data/raw/flashscore/seed_results/cup_SEASON_wyniki.html"
+        ),
+    )
     collect_ids.add_argument("--max-clicks", type=int, default=500, help="Max 'show more' clicks")
     collect_ids.add_argument("--headed", action="store_true", help="Run browser in headed mode")
     collect_ids.add_argument(
         "--storage-state",
         default="data/flashscore_storage_state.json",
         help="Path to Playwright storage_state.json",
+    )
+    collect_ids.add_argument(
+        "--profile-dir",
+        default="data/flashscore_profile",
+        help="Persistent browser profile (same session as harvest)",
     )
     collect_ids.add_argument(
         "--debug-dir",
@@ -166,6 +185,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="Write debug artifacts here",
     )
     harvest.add_argument("--force", action="store_true", help="Ignore cache and re-download")
+    harvest.add_argument(
+        "--wyniki-html-out",
+        default=None,
+        metavar="PATH",
+        help=(
+            "Also save results page HTML (embedded ~AA÷) for build_integration_supplement seed HTML"
+        ),
+    )
 
     backfill_li = sub.add_parser(
         "backfill-flashscore-lineups",
@@ -280,20 +307,26 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.cmd == "collect-flashscore-match-ids":
+        html_out = Path(args.wyniki_html_out) if args.wyniki_html_out else None
+        if args.out is None and html_out is None:
+            raise SystemExit("collect-flashscore-match-ids: pass --out and/or --wyniki-html-out")
+        ids_out = Path(args.out) if args.out else None
         cfg = CollectConfig(
             headless=not args.headed,
             timeout_ms=120_000,
             storage_state_path=Path(args.storage_state),
-            user_data_dir=Path("data/flashscore_profile"),
+            user_data_dir=Path(args.profile_dir),
             debug_dir=Path(args.debug_dir),
+            wyniki_html_out=html_out,
         )
         ids = collect_match_ids_from_results_page(
             url=args.url,
             max_clicks=args.max_clicks,
             config=cfg,
         )
-        out_path = Path(args.out)
-        out_path.write_text("\n".join(ids) + ("\n" if ids else ""), encoding="utf-8")
+        if ids_out is not None:
+            ids_out.parent.mkdir(parents=True, exist_ok=True)
+            ids_out.write_text("\n".join(ids) + ("\n" if ids else ""), encoding="utf-8")
         return 0
 
     if args.cmd == "init-flashscore-session":
@@ -305,6 +338,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.cmd == "harvest-flashscore-season":
+        html_out = Path(args.wyniki_html_out) if args.wyniki_html_out else None
         cfg = CollectConfig(
             headless=True,
             # Some Flashscore seasons occasionally load slower / hit anti-bot delays.
@@ -313,6 +347,7 @@ def main(argv: list[str] | None = None) -> int:
             storage_state_path=Path(args.storage_state),
             user_data_dir=Path(args.profile_dir),
             debug_dir=Path(args.debug_dir),
+            wyniki_html_out=html_out,
         )
         event_ids = collect_match_ids_from_results_page(
             url=args.results_url,
