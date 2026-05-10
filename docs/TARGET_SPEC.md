@@ -32,7 +32,7 @@ Baseline **diag** i osobny plik RCA — nie kopiuj liczb między nimi bez etykie
 
 | Rola | Plik wyjściowy | Ostatnio w repo (przykład) |
 |------|----------------|---------------------------|
-| **Regress / baseline** diag | [`integration_diag_latest.json`](../data/integrated/integration_diag_latest.json) | `2026-05-09T22:19:36Z`, `git_rev_short=b48273c`, `footballcsv_cache_fallback=true`, `-F`, `--skip-lookup-miss-sample`, seed `42`, `R=7` |
+| **Regress / baseline** diag | [`integration_diag_latest.json`](../data/integrated/integration_diag_latest.json) | `2026-05-10T12:00:47Z`, `git_rev_short=8246107`, `footballcsv_cache_fallback=true`, `-F`, `--skip-lookup-miss-sample`, seed `42`, `R=7`; `meta_fingerprint_summary.feeds_used_count=5`, `feed_note=manifest_wild=55_count=5` |
 | **RCA lookup_miss** | [`integration_diag_rca_lookup_miss.json`](../data/integrated/integration_diag_rca_lookup_miss.json) | `2026-05-09T22:19:39Z`; `n=200`, bez `-F` (klasyfikacja tylko próbki); w próbce **29** wierszy `ekstraklasa-2526`, kat. `no_ordered_hit_after_pmR` (**14.5 %** próbki; populacja zbioru 142 przy 982 miss łącznie) |
 | **Supplement → enrichment** | `supplement.sqlite` + [`model_input_coverage_latest.json`](../data/integrated/model_input_coverage_latest.json) | Build z `--footballcsv-cache-fallback`; enrichment `generated_at=2026-05-09T22:19:48Z`; [`model_input_coverage_manifest.json`](../data/integrated/model_input_coverage_manifest.json) `manifest_revision=2026-05-09c` |
 | **Coverage** (RAW / kubki; nie zlewaj z enrichment) | [`coverage_latest.json`](../data/integrated/coverage_latest.json) | `generated_at=2026-05-09T22:22:45Z`; `integration_coverage.py` po supplemencie |
@@ -80,7 +80,10 @@ Interpretacja „join’’ w drugim wierszu: ułamek zdarzeń w join scope z **
 
 Źródło liczb: klucze `skipped_no_meta_by_dataset`, `lookup_miss_category_histogram_by_dataset` w diag (patrz ścieżka poniżej). Aktualny manifest feedów dla kolejności overlapu: [`data/integrated/flashscore_list_feed_manifest.json`](../data/integrated/flashscore_list_feed_manifest.json); augmentation seedów: [`flashscore_integration_feeds.py`](../src/football_ai/integration/flashscore_integration_feeds.py) (`seed_augment_html_paths`).
 
+**Gate RAW (wdrożenie planu — jedna próba przy obecnym snapshotcie):** regress `integration_diag_latest.json` jak w tabeli **Replay**; dla `laliga-2526` próbka 24 × `event_id` z pola `skipped_no_meta_event_id_sample_by_dataset`: **0/24** występuje literalnie w plikach `data/raw/flashscore/feeds/**/*.txt` (brak wpisów mega-list przy tych ID). **Interpretacja wg planu:** skłania to ku zmianie **zakresu/priorytetu feedów / slice / seed**, a nie kolejnemu pobraniu tych samych URL bez zmiany; po zmianie — ponownie `download_flashscore_integration_feeds` → diag → pomiar.
+
 ---
+
 
 ## Sygnał **CSV / join** (rozłącznie od Tier‑1 meta)
 
