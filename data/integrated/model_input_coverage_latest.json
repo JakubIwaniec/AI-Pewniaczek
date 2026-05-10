@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-09T22:19:48Z",
+  "generated_at": "2026-05-10T12:31:11Z",
   "manifest_path": "C:\\Users\\Iwan\\Desktop\\AI Pewniaczek\\data\\integrated\\model_input_coverage_manifest.json",
   "manifest_schema_version": "1",
   "manifest_revision": "2026-05-09c",
@@ -14,8 +14,8 @@
   "strict_feed_sanity": false,
   "supplement_query_skipped": false,
   "meta_fingerprint": {
-    "feed_note": "manifest_wild=55_count=5",
-    "augment_seed_count": 6716,
+    "feed_note": "manifest_wild=55_count=6",
+    "augment_seed_count": 6712,
     "feed_files": [
       {
         "path": "data\\raw\\flashscore\\feeds\\f_1_-1_0_pl_1.txt",
@@ -41,6 +41,11 @@
         "path": "data\\raw\\flashscore\\feeds\\f_1_-1_3_pl_1.txt",
         "size": 203662,
         "mtime_ns": 1778173495821566600
+      },
+      {
+        "path": "data\\raw\\flashscore\\feeds\\f_1_-1_5_pl_1.txt",
+        "size": 832282,
+        "mtime_ns": 1778415219212075200
       }
     ],
     "seed_html_files": [
@@ -393,7 +398,7 @@
   },
   "total_manifest_events_scanned": 12141,
   "global_primitive_slots_weight_sum": 4.0,
-  "global_primitive_coverage": 0.817416,
+  "global_primitive_coverage": 0.818199,
   "per_bucket": {
     "flash_df_st_nonempty": {
       "label_pl": "Surowy feed statystyk meczu (df_st) — plik obecny i niezerowy rozmiar",
@@ -431,9 +436,9 @@
       "counts_toward_coverage": "primitive",
       "weight": 1.0,
       "included_in_global": true,
-      "hit_count": 6716,
+      "hit_count": 6754,
       "event_total": 12141,
-      "fraction": 0.5531669549460506
+      "fraction": 0.5562968453998847
     },
     "supplement_any_fd_like_row": {
       "label_pl": "Join do wiersza football-data lub footballcsv-cache mirror (SQLite supplement)",

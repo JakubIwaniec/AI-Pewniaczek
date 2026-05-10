@@ -1,7 +1,7 @@
 {
   "schema_version": "4",
-  "generated_at": "2026-05-10T12:16:31Z",
-  "git_rev_short": "70e1680",
+  "generated_at": "2026-05-10T12:29:11Z",
+  "git_rev_short": "f97a693",
   "options": {
     "footballcsv_cache_fallback": true,
     "lookup_miss_sample_size": 200,
