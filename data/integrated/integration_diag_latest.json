@@ -1,7 +1,7 @@
 {
   "schema_version": "4",
-  "generated_at": "2026-05-10T12:00:47Z",
-  "git_rev_short": "8246107",
+  "generated_at": "2026-05-10T12:16:31Z",
+  "git_rev_short": "70e1680",
   "options": {
     "footballcsv_cache_fallback": true,
     "lookup_miss_sample_size": 200,
@@ -11,33 +11,33 @@
     "lookup_miss_diagnostic_radius_days": 7
   },
   "meta_fingerprint_summary": {
-    "feed_note": "manifest_wild=55_count=5",
-    "augment_seed_count": 6716,
-    "feeds_used_count": 5,
-    "meta_index_size": 7112
+    "feed_note": "manifest_wild=55_count=6",
+    "augment_seed_count": 6712,
+    "feeds_used_count": 6,
+    "meta_index_size": 8618
   },
   "ids_total_manifest_events": 12141,
   "ids_in_join_scope": 6424,
   "ids_never_attempted_join": 5717,
   "supplement_counters": {
-    "skipped_no_meta": 5425,
-    "skipped_no_row": 982,
-    "skipped_no_row_build_semantics": 982,
+    "skipped_no_meta": 5387,
+    "skipped_no_row": 1020,
+    "skipped_no_row_build_semantics": 1020,
     "breakdown_in_scope": {
       "meta_no_valid_unix_attempted_lookup": 0,
-      "lookup_miss_given_valid_unix": 982
+      "lookup_miss_given_valid_unix": 1020
     },
     "join_would_succeed_count": 17
   },
   "meta_state_per_event_aggregate": {
-    "absent_key": 5425,
+    "absent_key": 5387,
     "present_no_valid_unix": 0,
-    "present_unix_ok": 6716
+    "present_unix_ok": 6754
   },
   "kickoff_aggregate_global": {
-    "absent_key": 5425,
+    "absent_key": 5387,
     "present_no_valid_unix": 0,
-    "present_unix_ok": 6716
+    "present_unix_ok": 6754
   },
   "skipped_no_meta_by_dataset": {
     "bundesliga-2223": {
@@ -56,9 +56,9 @@
       "share": 1.0
     },
     "bundesliga-2526": {
-      "missing_meta": 149,
+      "missing_meta": 143,
       "in_join_scope_events": 149,
-      "share": 1.0
+      "share": 0.959731543624161
     },
     "carabao_cup-2223": {
       "missing_meta": 0,
@@ -176,9 +176,9 @@
       "share": 1.0
     },
     "jupiler_league-2526": {
-      "missing_meta": 141,
+      "missing_meta": 136,
       "in_join_scope_events": 141,
-      "share": 1.0
+      "share": 0.9645390070921985
     },
     "laliga-2223": {
       "missing_meta": 105,
@@ -196,9 +196,9 @@
       "share": 1.0
     },
     "laliga-2526": {
-      "missing_meta": 176,
+      "missing_meta": 171,
       "in_join_scope_events": 176,
-      "share": 1.0
+      "share": 0.9715909090909091
     },
     "liga_portugal-2223": {
       "missing_meta": 105,
@@ -236,9 +236,9 @@
       "share": 1.0
     },
     "ligue_1-2526": {
-      "missing_meta": 134,
+      "missing_meta": 133,
       "in_join_scope_events": 134,
-      "share": 1.0
+      "share": 0.9925373134328358
     },
     "premier_league-2223": {
       "missing_meta": 103,
@@ -256,9 +256,9 @@
       "share": 1.0
     },
     "premier_league-2526": {
-      "missing_meta": 168,
+      "missing_meta": 163,
       "in_join_scope_events": 168,
-      "share": 1.0
+      "share": 0.9702380952380952
     },
     "serie_a-2223": {
       "missing_meta": 103,
@@ -276,9 +276,9 @@
       "share": 1.0
     },
     "serie_a-2526": {
-      "missing_meta": 168,
+      "missing_meta": 164,
       "in_join_scope_events": 168,
-      "share": 1.0
+      "share": 0.9761904761904762
     },
     "super_league-2223": {
       "missing_meta": 105,
@@ -296,9 +296,9 @@
       "share": 1.0
     },
     "super_league-2526": {
-      "missing_meta": 136,
+      "missing_meta": 133,
       "in_join_scope_events": 136,
-      "share": 1.0
+      "share": 0.9779411764705882
     },
     "super_lig-2223": {
       "missing_meta": 108,
@@ -316,9 +316,9 @@
       "share": 1.0
     },
     "super_lig-2526": {
-      "missing_meta": 132,
+      "missing_meta": 123,
       "in_join_scope_events": 132,
-      "share": 1.0
+      "share": 0.9318181818181818
     }
   },
   "skipped_no_meta_event_id_sample_by_dataset": {
@@ -1438,7 +1438,7 @@
       "lrHAGo3e",
       "SEXhgI5U",
       "KlUpevyI",
-      "OC7c4ClC"
+      "d8KIEPX7"
     ],
     "super_lig-2223": [
       "nH4FwnTO",
@@ -1562,9 +1562,9 @@
       "present_unix_ok": 0
     },
     "bundesliga-2526": {
-      "absent_key": 149,
+      "absent_key": 143,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 6
     },
     "carabao_cup-2223": {
       "absent_key": 0,
@@ -1762,9 +1762,9 @@
       "present_unix_ok": 0
     },
     "jupiler_league-2526": {
-      "absent_key": 141,
+      "absent_key": 136,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 5
     },
     "knvb_beker-2223": {
       "absent_key": 0,
@@ -1802,9 +1802,9 @@
       "present_unix_ok": 0
     },
     "laliga-2526": {
-      "absent_key": 176,
+      "absent_key": 171,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 5
     },
     "liga_europy-2223": {
       "absent_key": 0,
@@ -1902,9 +1902,9 @@
       "present_unix_ok": 0
     },
     "ligue_1-2526": {
-      "absent_key": 134,
+      "absent_key": 133,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 1
     },
     "premier_league-2223": {
       "absent_key": 103,
@@ -1922,9 +1922,9 @@
       "present_unix_ok": 0
     },
     "premier_league-2526": {
-      "absent_key": 168,
+      "absent_key": 163,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 5
     },
     "puchar_belgii-2223": {
       "absent_key": 0,
@@ -2042,9 +2042,9 @@
       "present_unix_ok": 0
     },
     "serie_a-2526": {
-      "absent_key": 168,
+      "absent_key": 164,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 4
     },
     "super_league-2223": {
       "absent_key": 105,
@@ -2062,9 +2062,9 @@
       "present_unix_ok": 0
     },
     "super_league-2526": {
-      "absent_key": 136,
+      "absent_key": 133,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 3
     },
     "super_lig-2223": {
       "absent_key": 108,
@@ -2082,9 +2082,9 @@
       "present_unix_ok": 0
     },
     "super_lig-2526": {
-      "absent_key": 132,
+      "absent_key": 123,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 9
     },
     "taca_de_portugal-2223": {
       "absent_key": 0,
@@ -3244,7 +3244,7 @@
   "notes": "skipped_no_row_build_semantics matches build_integration_supplement counter (meta present but lookup_fd_row returned None, including unix_ts is None).",
   "lookup_miss_sample_meta": {
     "preset": "lookup_miss_valid_unix",
-    "population": 982,
+    "population": 1020,
     "sample_size": 0,
     "seed": 42,
     "stratification": "proportional_largest_remainder",
@@ -3257,9 +3257,12 @@
   "lookup_miss_category_histogram_sample": {},
   "lookup_miss_category_histogram_population": {
     "csv_index_empty": 840,
-    "no_ordered_hit_after_pmR": 142
+    "no_ordered_hit_after_pmR": 180
   },
   "lookup_miss_category_histogram_by_dataset": {
+    "bundesliga-2526": {
+      "no_ordered_hit_after_pmR": 6
+    },
     "carabao_cup-2223": {
       "csv_index_empty": 93
     },
@@ -3286,7 +3289,28 @@
     },
     "fa_cup-2526": {
       "csv_index_empty": 130
+    },
+    "jupiler_league-2526": {
+      "no_ordered_hit_after_pmR": 5
+    },
+    "laliga-2526": {
+      "no_ordered_hit_after_pmR": 5
+    },
+    "ligue_1-2526": {
+      "no_ordered_hit_after_pmR": 1
+    },
+    "premier_league-2526": {
+      "no_ordered_hit_after_pmR": 5
+    },
+    "serie_a-2526": {
+      "no_ordered_hit_after_pmR": 4
+    },
+    "super_league-2526": {
+      "no_ordered_hit_after_pmR": 3
+    },
+    "super_lig-2526": {
+      "no_ordered_hit_after_pmR": 9
     }
   },
-  "baseline_bottleneck_hint": "nigdy próby join: 5717/12141 (47.1%) — zakres CSV/unsupported; w scope join brak wpisu meta_ix: skipped_no_meta=5425; meta jest, brak dopasowania CSV: skipped_no_row~=982"
+  "baseline_bottleneck_hint": "nigdy próby join: 5717/12141 (47.1%) — zakres CSV/unsupported; w scope join brak wpisu meta_ix: skipped_no_meta=5387; meta jest, brak dopasowania CSV: skipped_no_row~=1020"
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "Kilka wariantów mega-listy x/feed (różnice numerów zamiast locales) scala się w większą unię bloków AA. Wyższe priority → plik wczytywany później (nadpisuje kolizje). Dla CL/UEFA mega-listy i tak są ubogie — dopisz własne feed_key lub skorzystaj z football_ai download-flashscore-from-feed i zapisz RAW .txt pod feeds/.",
+  "description": "Kilka wariantów mega-listy x/feed (różnice numerów zamiast locales) scala się w większą unię bloków AA. Wariant f_1_-1_5_pl_1 zawiera m.in. /hiszpania/laliga/ (brak w 0–3 przy tym samym locale). Wyższe priority → plik wczytywany później (kolizje w union: _richer_meta). Dla CL/UEFA mega-listy i tak są ubogie — dopisz własne feed_key lub football_ai download-flashscore-from-feed → RAW .txt pod feeds/.",
   "wildcard_priority": 55,
   "download": [
     {
@@ -32,6 +32,12 @@
       "filename": null,
       "priority": 50,
       "tags": ["mega", "variant", "pl_locale"]
+    },
+    {
+      "feed_key": "f_1_-1_5_pl_1",
+      "filename": null,
+      "priority": 52,
+      "tags": ["mega", "variant", "pl_locale", "tier1_laliga"]
     }
   ],
   "include_feed_subdir_globs": ["**/*.txt"]

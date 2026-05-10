@@ -32,7 +32,7 @@ Baseline **diag** i osobny plik RCA — nie kopiuj liczb między nimi bez etykie
 
 | Rola | Plik wyjściowy | Ostatnio w repo (przykład) |
 |------|----------------|---------------------------|
-| **Regress / baseline** diag | [`integration_diag_latest.json`](../data/integrated/integration_diag_latest.json) | `2026-05-10T12:00:47Z`, `git_rev_short=8246107`, `footballcsv_cache_fallback=true`, `-F`, `--skip-lookup-miss-sample`, seed `42`, `R=7`; `meta_fingerprint_summary.feeds_used_count=5`, `feed_note=manifest_wild=55_count=5` |
+| **Regress / baseline** diag | [`integration_diag_latest.json`](../data/integrated/integration_diag_latest.json) | `generated_at=2026-05-10T12:16:31Z`, `git_rev_short=70e1680` (pole w JSON — identyfikator rewizji przy `run_diag`; commit na `main` po merge może być inny), `footballcsv_cache_fallback=true`, `-F`, `--skip-lookup-miss-sample`, seed `42`, `R=7`; `feeds_used_count=6`, `feed_note=manifest_wild=55_count=6`, `meta_index_size=8618`; `skipped_no_meta=5387` |
 | **RCA lookup_miss** | [`integration_diag_rca_lookup_miss.json`](../data/integrated/integration_diag_rca_lookup_miss.json) | `2026-05-09T22:19:39Z`; `n=200`, bez `-F` (klasyfikacja tylko próbki); w próbce **29** wierszy `ekstraklasa-2526`, kat. `no_ordered_hit_after_pmR` (**14.5 %** próbki; populacja zbioru 142 przy 982 miss łącznie) |
 | **Supplement → enrichment** | `supplement.sqlite` + [`model_input_coverage_latest.json`](../data/integrated/model_input_coverage_latest.json) | Build z `--footballcsv-cache-fallback`; enrichment `generated_at=2026-05-09T22:19:48Z`; [`model_input_coverage_manifest.json`](../data/integrated/model_input_coverage_manifest.json) `manifest_revision=2026-05-09c` |
 | **Coverage** (RAW / kubki; nie zlewaj z enrichment) | [`coverage_latest.json`](../data/integrated/coverage_latest.json) | `generated_at=2026-05-09T22:22:45Z`; `integration_coverage.py` po supplemencie |
@@ -65,22 +65,22 @@ Interpretacja „join’’ w drugim wierszu: ułamek zdarzeń w join scope z **
 
 | `dataset_label`        | missing_meta (`share`) | N w join scope | Σ lookup_miss (populacja, `-F`) | Uwagi |
 |------------------------|------------------------|----------------|----------------------------------|-------|
-| laliga-2526           | 176 (100%)             | 176            | 0                               | czysty botleneck meta vs feed mega-list |
-| premier_league-2526   | 168 (100%)             | 168            | 0                               | idem                                     |
-| serie_a-2526          | 168 (100%)             | 168            | 0                               | idem                                     |
+| laliga-2526           | 171 (97.2%)            | 176            | 5                               | po `f_1_-1_5_pl_1`: LaLiga wraca do megafeedu (było 0–3); nadal braki dla części kolejek |
+| premier_league-2526   | 163 (97.0%)            | 168            | 5                               | ta sama iteracja manifestu |
+| serie_a-2526          | 164 (97.6%)            | 168            | 4                               | idem                                     |
 | liga_portugal-2526    | 154 (100%)             | 154            | 0                               | idem                                     |
-| bundesliga-2526       | 149 (100%)             | 149            | 0                               | idem                                     |
-| jupiler_league-2526   | 141 (100%)             | 141            | 0                               | idem                                     |
+| bundesliga-2526       | 143 (95.9%)            | 149            | 6                               | idem                                     |
+| jupiler_league-2526   | 136 (96.4%)            | 141            | 5                               | idem                                     |
 | eredivisie-2526       | 136 (100%)             | 136            | 0                               | idem                                     |
-| super_league-2526     | 136 (100%)             | 136            | 0                               | idem                                     |
-| ligue_1-2526          | 134 (100%)             | 134            | 0                               | idem                                     |
-| super_lig-2526        | 132 (100%)             | 132            | 0                               | idem                                     |
+| super_league-2526     | 133 (97.8%)            | 136            | 3                               | idem                                     |
+| ligue_1-2526          | 133 (99.3%)            | 134            | 1                               | idem                                     |
+| super_lig-2526        | 123 (93.2%)            | 132            | 9                               | idem                                     |
 | chance_liga-2526      | 124 (100%)             | 124            | 0                               | **Nie mieszać** kodu **`C1` MMZ** z pucharem — CLI mapuje **`CZE1` → „Czech Chance Liga’’** (`src/football_ai/cli.py`) |
 | jupiler_league-2223   | 109 (100%)             | 109            | 0                               | sezonowy priorytet po sezonowych MAX z 2526 |
 
 Źródło liczb: klucze `skipped_no_meta_by_dataset`, `lookup_miss_category_histogram_by_dataset` w diag (patrz ścieżka poniżej). Aktualny manifest feedów dla kolejności overlapu: [`data/integrated/flashscore_list_feed_manifest.json`](../data/integrated/flashscore_list_feed_manifest.json); augmentation seedów: [`flashscore_integration_feeds.py`](../src/football_ai/integration/flashscore_integration_feeds.py) (`seed_augment_html_paths`).
 
-**Gate RAW (wdrożenie planu — jedna próba przy obecnym snapshotcie):** regress `integration_diag_latest.json` jak w tabeli **Replay**; dla `laliga-2526` próbka 24 × `event_id` z pola `skipped_no_meta_event_id_sample_by_dataset`: **0/24** występuje literalnie w plikach `data/raw/flashscore/feeds/**/*.txt` (brak wpisów mega-list przy tych ID). **Interpretacja wg planu:** skłania to ku zmianie **zakresu/priorytetu feedów / slice / seed**, a nie kolejnemu pobraniu tych samych URL bez zmiany; po zmianie — ponownie `download_flashscore_integration_feeds` → diag → pomiar.
+**Gate RAW:** po dodaniu **`f_1_-1_5_pl_1`** (`download_flashscore_integration_feeds` → diag) ta sama próbka 24 × `event_id` z `skipped_no_meta_event_id_sample_by_dataset["laliga-2526"]` nadal daje **0/24** literalnych trafień w `data/raw/flashscore/feeds/**/*.txt` — to są **nadal** brakujące wobec bundla ID; równolegle globalnie `skipped_no_meta` spadło (**5425 → 5387**), a dla `laliga-2526` brak meta **171/176** (~97%, wcześniej 100%). Wariant `f_1_-1_X` z `X∈{0,1,2,3}` na `flashscore.pl` **nie** obejmował ścieżki `/hiszpania/laliga/` (tylko m.in. Tercera RFEF); `f_1_-1_5_pl_1` zawiera sekcję LaLiga. **Następna iteracja Tier‑1:** rozważyć `f_1_-1_6_pl_1` / `f_1_-1_7_pl_1` lub slice pod pozostałe ID, bez powielania identycznego zestawu `0–3`.
 
 ---
 
@@ -100,6 +100,8 @@ Zbiorów poniżej **nie** dobiera się przez `share` braku meta (meta jest dost�
 
 Przed zmianą **kodu** join: zweryfikuj dla `lookup_miss_given_valid_unix` przy `no_ordered_hit_after_pmR`, czy wiersze CSV (POL / `norm_club`, kolejność sortu przy PM+R) oraz parametry szerokiego okna (`diagnostic_wide_radius_days`, `lookup_miss_sampling.R`) faktycznie obejmują mecz przy danym `unix_kickoff` — przeczetuj `join_detail`/ścieżkę CSV, nie kolejny identyczny download feedów bez hipotezy. Lista JSON w jednej linii: `python scripts/rca_lookup_miss_filter.py --json data/integrated/integration_diag_rca_lookup_miss.json --dataset-prefix ekstraklasa`.
 
+**Weryfikacja P1 (próbka vs populacja):** dla np. `hCODSnKa` i `rXyiNLI0` z filtrowania RCA wpisy **istnieją** w bundlu Flashscore (`load_flashscore_event_meta_bundle`): `unix_kickoff`, `home_team`, `away_team` — luką pozostaje **CSV / join**, nie pobieranie list-feedu. Ścieżka POL i fallback cache: jak w [`build_integration_supplement.py`](../scripts/build_integration_supplement.py) z `--footballcsv-cache-fallback` (`pol_csv_path` + `cache-footballdata`). RCA to **≤29** przypadków w próbce RCA, nie pełnych 142 zdarzeń `lookup_miss`.
+
 ---
 
 ## Decyzje otwarte (produkt / manifest)
@@ -112,8 +114,8 @@ Po ustaleniu opcji wpisz konkret oraz **snapshot IDS** przy wyborze B („pełny
 
 | Decyzja | Wybrane A/B/C lub linia kubków | Owner | Data | Freeze IDS (# commit / hash / lista) |
 |---------|---------------------------------|-------|------|----------------------------------------|
-| `unsupported_league_key` | | | | |
-| FA / Carabao 2223+ | | | | |
+| `unsupported_league_key` | **Defer** — decyzja A/B/C po zmapowaniu kluczy na adaptery CSV lub jawne „out‑of‑gate’’ | _TBD_ | _TBD_ | — |
+| FA / Carabao 2223+ | **Defer** — osobny epik: źródło wyników / przycięcie IDS / MMZ-overlay (nie przyrost bez decyzji) | _TBD_ | _TBD_ | — |
 
 **SSoT list IDS w diag/supplement:** `league_manifest()` w [`data_integrity_flashscore.py`](../scripts/data_integrity_flashscore.py) + **`data/event_ids/*.txt`**.
 
