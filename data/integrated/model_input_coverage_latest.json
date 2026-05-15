@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T12:31:11Z",
+  "generated_at": "2026-05-15T19:02:34Z",
   "manifest_path": "C:\\Users\\Iwan\\Desktop\\AI Pewniaczek\\data\\integrated\\model_input_coverage_manifest.json",
   "manifest_schema_version": "1",
   "manifest_revision": "2026-05-09c",
@@ -15,7 +15,7 @@
   "supplement_query_skipped": false,
   "meta_fingerprint": {
     "feed_note": "manifest_wild=55_count=6",
-    "augment_seed_count": 6712,
+    "augment_seed_count": 7985,
     "feed_files": [
       {
         "path": "data\\raw\\flashscore\\feeds\\f_1_-1_0_pl_1.txt",
@@ -75,6 +75,11 @@
         "mtime_ns": 1776095956434620800
       },
       {
+        "path": "data\\raw\\flashscore\\seed_results\\bundesliga_2526_wyniki.html",
+        "size": 437798,
+        "mtime_ns": 1778871559888126500
+      },
+      {
         "path": "data\\raw\\flashscore\\seed_results\\carabao_cup_2223_wyniki.html",
         "size": 844589,
         "mtime_ns": 1778275943757034900
@@ -93,6 +98,11 @@
         "path": "data\\raw\\flashscore\\seed_results\\carabao_cup_2526_wyniki.html",
         "size": 578680,
         "mtime_ns": 1778276026061085600
+      },
+      {
+        "path": "data\\raw\\flashscore\\seed_results\\chance_liga_2526_wyniki.html",
+        "size": 421501,
+        "mtime_ns": 1778871561961929400
       },
       {
         "path": "data\\raw\\flashscore\\seed_results\\copa_del_rey_2223_wyniki.html",
@@ -175,6 +185,16 @@
         "mtime_ns": 1778276600598151800
       },
       {
+        "path": "data\\raw\\flashscore\\seed_results\\ekstraklasa_2526_wyniki.html",
+        "size": 429762,
+        "mtime_ns": 1778871564172616200
+      },
+      {
+        "path": "data\\raw\\flashscore\\seed_results\\eredivisie_2526_wyniki.html",
+        "size": 421648,
+        "mtime_ns": 1778871566257189600
+      },
+      {
         "path": "data\\raw\\flashscore\\seed_results\\fa_cup_2223_wyniki.html",
         "size": 932264,
         "mtime_ns": 1778277691258121400
@@ -195,6 +215,11 @@
         "mtime_ns": 1778276493711566200
       },
       {
+        "path": "data\\raw\\flashscore\\seed_results\\jupiler_league_2526_wyniki.html",
+        "size": 453724,
+        "mtime_ns": 1778871568594757600
+      },
+      {
         "path": "data\\raw\\flashscore\\seed_results\\knvb_beker_2223_wyniki.html",
         "size": 810804,
         "mtime_ns": 1778276735539631900
@@ -213,6 +238,11 @@
         "path": "data\\raw\\flashscore\\seed_results\\knvb_beker_2526_wyniki.html",
         "size": 578785,
         "mtime_ns": 1778276816728033500
+      },
+      {
+        "path": "data\\raw\\flashscore\\seed_results\\laliga_2526_wyniki.html",
+        "size": 457749,
+        "mtime_ns": 1778871553746695500
       },
       {
         "path": "data\\raw\\flashscore\\seed_results\\liga_europy_2223_wyniki.html",
@@ -273,6 +303,21 @@
         "path": "data\\raw\\flashscore\\seed_results\\liga_mistrzow_2526_wyniki.html",
         "size": 409837,
         "mtime_ns": 1778173971901461200
+      },
+      {
+        "path": "data\\raw\\flashscore\\seed_results\\liga_portugal_2526_wyniki.html",
+        "size": 441077,
+        "mtime_ns": 1778871570824811400
+      },
+      {
+        "path": "data\\raw\\flashscore\\seed_results\\ligue_1_2526_wyniki.html",
+        "size": 424898,
+        "mtime_ns": 1778871572836352800
+      },
+      {
+        "path": "data\\raw\\flashscore\\seed_results\\premier_league_2526_wyniki.html",
+        "size": 451007,
+        "mtime_ns": 1778871575291716100
       },
       {
         "path": "data\\raw\\flashscore\\seed_results\\puchar_belgii_2223_wyniki.html",
@@ -375,6 +420,21 @@
         "mtime_ns": 1778277145034512800
       },
       {
+        "path": "data\\raw\\flashscore\\seed_results\\serie_a_2526_wyniki.html",
+        "size": 446528,
+        "mtime_ns": 1778871578568509500
+      },
+      {
+        "path": "data\\raw\\flashscore\\seed_results\\super_league_2526_wyniki.html",
+        "size": 410149,
+        "mtime_ns": 1778871580909288400
+      },
+      {
+        "path": "data\\raw\\flashscore\\seed_results\\super_lig_2526_wyniki.html",
+        "size": 420902,
+        "mtime_ns": 1778871583048968500
+      },
+      {
         "path": "data\\raw\\flashscore\\seed_results\\taca_de_portugal_2223_wyniki.html",
         "size": 1029940,
         "mtime_ns": 1778276377982793900
@@ -398,7 +458,7 @@
   },
   "total_manifest_events_scanned": 12141,
   "global_primitive_slots_weight_sum": 4.0,
-  "global_primitive_coverage": 0.818199,
+  "global_primitive_coverage": 0.843608,
   "per_bucket": {
     "flash_df_st_nonempty": {
       "label_pl": "Surowy feed statystyk meczu (df_st) — plik obecny i niezerowy rozmiar",
@@ -436,9 +496,9 @@
       "counts_toward_coverage": "primitive",
       "weight": 1.0,
       "included_in_global": true,
-      "hit_count": 6754,
+      "hit_count": 7988,
       "event_total": 12141,
-      "fraction": 0.5562968453998847
+      "fraction": 0.6579359196112347
     },
     "supplement_any_fd_like_row": {
       "label_pl": "Join do wiersza football-data lub footballcsv-cache mirror (SQLite supplement)",
@@ -446,9 +506,9 @@
       "counts_toward_coverage": "primitive",
       "weight": 0.0,
       "included_in_global": false,
-      "hit_count": 34,
+      "hit_count": 535,
       "event_total": 12141,
-      "fraction": 0.002800428300798946
+      "fraction": 0.044065562968454
     },
     "supplement_row_source_football_data_co_uk": {
       "label_pl": "Supplement źródła football-data.co.uk (Joseph Buchdahl layout / CSV główny)",
@@ -456,9 +516,9 @@
       "counts_toward_coverage": "informational",
       "weight": 0.0,
       "included_in_global": false,
-      "hit_count": 34,
+      "hit_count": 535,
       "event_total": 12141,
-      "fraction": 0.002800428300798946
+      "fraction": 0.044065562968454
     },
     "supplement_row_source_mirror_cache_footballdata": {
       "label_pl": "Supplement ze źródła mirror footballcsv/cache.footballdata (inne kolumny CSV; treść zbliżona Buchdahl)",
@@ -521,12 +581,12 @@
       "fraction": 1.0
     }
   },
-  "enrichment_join_coverage_fraction": 0.0028,
-  "enrichment_join_hit_count": 34,
+  "enrichment_join_coverage_fraction": 0.044066,
+  "enrichment_join_hit_count": 535,
   "enrichment_join_by_manifest_source": {
     "football_data_co_uk": {
-      "manifest_event_hit_count": 34,
-      "fraction_of_manifest_events": 0.0028
+      "manifest_event_hit_count": 535,
+      "fraction_of_manifest_events": 0.044066
     },
     "mirror": {
       "manifest_event_hit_count": 0,

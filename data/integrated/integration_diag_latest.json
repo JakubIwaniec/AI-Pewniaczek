@@ -1,7 +1,7 @@
 {
   "schema_version": "4",
-  "generated_at": "2026-05-10T12:32:05Z",
-  "git_rev_short": "3996643",
+  "generated_at": "2026-05-15T19:00:14Z",
+  "git_rev_short": "79d65cf",
   "options": {
     "footballcsv_cache_fallback": true,
     "lookup_miss_sample_size": 200,
@@ -12,32 +12,32 @@
   },
   "meta_fingerprint_summary": {
     "feed_note": "manifest_wild=55_count=6",
-    "augment_seed_count": 6712,
+    "augment_seed_count": 7985,
     "feeds_used_count": 6,
-    "meta_index_size": 8618
+    "meta_index_size": 9891
   },
   "ids_total_manifest_events": 12141,
   "ids_in_join_scope": 6424,
   "ids_never_attempted_join": 5717,
   "supplement_counters": {
-    "skipped_no_meta": 5387,
-    "skipped_no_row": 1020,
-    "skipped_no_row_build_semantics": 1020,
+    "skipped_no_meta": 4153,
+    "skipped_no_row": 1736,
+    "skipped_no_row_build_semantics": 1736,
     "breakdown_in_scope": {
       "meta_no_valid_unix_attempted_lookup": 0,
-      "lookup_miss_given_valid_unix": 1020
+      "lookup_miss_given_valid_unix": 1736
     },
-    "join_would_succeed_count": 17
+    "join_would_succeed_count": 535
   },
   "meta_state_per_event_aggregate": {
-    "absent_key": 5387,
+    "absent_key": 4153,
     "present_no_valid_unix": 0,
-    "present_unix_ok": 6754
+    "present_unix_ok": 7988
   },
   "kickoff_aggregate_global": {
-    "absent_key": 5387,
+    "absent_key": 4153,
     "present_no_valid_unix": 0,
-    "present_unix_ok": 6754
+    "present_unix_ok": 7988
   },
   "skipped_no_meta_by_dataset": {
     "bundesliga-2223": {
@@ -56,9 +56,9 @@
       "share": 1.0
     },
     "bundesliga-2526": {
-      "missing_meta": 143,
+      "missing_meta": 32,
       "in_join_scope_events": 149,
-      "share": 0.959731543624161
+      "share": 0.21476510067114093
     },
     "carabao_cup-2223": {
       "missing_meta": 0,
@@ -96,9 +96,9 @@
       "share": 1.0
     },
     "chance_liga-2526": {
-      "missing_meta": 124,
+      "missing_meta": 40,
       "in_join_scope_events": 124,
-      "share": 1.0
+      "share": 0.3225806451612903
     },
     "ekstraklasa-2223": {
       "missing_meta": 104,
@@ -136,9 +136,9 @@
       "share": 1.0
     },
     "eredivisie-2526": {
-      "missing_meta": 136,
+      "missing_meta": 22,
       "in_join_scope_events": 136,
-      "share": 1.0
+      "share": 0.16176470588235295
     },
     "fa_cup-2223": {
       "missing_meta": 0,
@@ -176,9 +176,9 @@
       "share": 1.0
     },
     "jupiler_league-2526": {
-      "missing_meta": 136,
+      "missing_meta": 17,
       "in_join_scope_events": 141,
-      "share": 0.9645390070921985
+      "share": 0.12056737588652482
     },
     "laliga-2223": {
       "missing_meta": 105,
@@ -196,9 +196,9 @@
       "share": 1.0
     },
     "laliga-2526": {
-      "missing_meta": 171,
+      "missing_meta": 50,
       "in_join_scope_events": 176,
-      "share": 0.9715909090909091
+      "share": 0.2840909090909091
     },
     "liga_portugal-2223": {
       "missing_meta": 105,
@@ -216,9 +216,9 @@
       "share": 1.0
     },
     "liga_portugal-2526": {
-      "missing_meta": 154,
+      "missing_meta": 40,
       "in_join_scope_events": 154,
-      "share": 1.0
+      "share": 0.2597402597402597
     },
     "ligue_1-2223": {
       "missing_meta": 109,
@@ -236,9 +236,9 @@
       "share": 1.0
     },
     "ligue_1-2526": {
-      "missing_meta": 133,
+      "missing_meta": 19,
       "in_join_scope_events": 134,
-      "share": 0.9925373134328358
+      "share": 0.1417910447761194
     },
     "premier_league-2223": {
       "missing_meta": 103,
@@ -256,9 +256,9 @@
       "share": 1.0
     },
     "premier_league-2526": {
-      "missing_meta": 163,
+      "missing_meta": 44,
       "in_join_scope_events": 168,
-      "share": 0.9702380952380952
+      "share": 0.2619047619047619
     },
     "serie_a-2223": {
       "missing_meta": 103,
@@ -276,9 +276,9 @@
       "share": 1.0
     },
     "serie_a-2526": {
-      "missing_meta": 164,
+      "missing_meta": 43,
       "in_join_scope_events": 168,
-      "share": 0.9761904761904762
+      "share": 0.25595238095238093
     },
     "super_league-2223": {
       "missing_meta": 105,
@@ -296,9 +296,9 @@
       "share": 1.0
     },
     "super_league-2526": {
-      "missing_meta": 133,
+      "missing_meta": 20,
       "in_join_scope_events": 136,
-      "share": 0.9779411764705882
+      "share": 0.14705882352941177
     },
     "super_lig-2223": {
       "missing_meta": 108,
@@ -316,9 +316,9 @@
       "share": 1.0
     },
     "super_lig-2526": {
-      "missing_meta": 123,
+      "missing_meta": 19,
       "in_join_scope_events": 132,
-      "share": 0.9318181818181818
+      "share": 0.14393939393939395
     }
   },
   "skipped_no_meta_event_id_sample_by_dataset": {
@@ -401,30 +401,30 @@
       "Od8UHY4b"
     ],
     "bundesliga-2526": [
-      "jckRSoU8",
-      "6VjbL3Mr",
-      "hnFuYt6l",
-      "2Hz1uPDE",
-      "zk7v5rx2",
-      "dGT9w3rR",
-      "OAmZQPbL",
-      "Eef6Jsie",
-      "zBrFHLL7",
-      "z70A19V9",
-      "jqAhEnFF",
-      "2NTch5hd",
-      "fHGqG8p3",
-      "Stc23V0c",
-      "SO3W647k",
-      "dMlJam0M",
-      "riSaCQqS",
-      "6ezkfRNq",
-      "rgubnXQb",
-      "z9D8yGCt",
-      "jJr6pBeB",
-      "Mwiklgdn",
-      "xGIWVBtI",
-      "8zRFZgsg"
+      "tdmuut0k",
+      "ne5gywrH",
+      "hWEilpw3",
+      "6FjAy7gc",
+      "vgpYTfzi",
+      "0xS5Qtod",
+      "rNb2ZGCT",
+      "6wZdS2Gq",
+      "EufIZpO9",
+      "zerRXOhM",
+      "vRmqLQiJ",
+      "QN5Aynx0",
+      "vV1owaD4",
+      "W0pyNnN6",
+      "by4IZP6C",
+      "KMQVrUqQ",
+      "hxMjHHjo",
+      "UeC1w87m",
+      "IFDxuLrh",
+      "ObDLNPCO",
+      "2B3cTTrm",
+      "27DoCV8l",
+      "Wn528m8D",
+      "bgclWj0K"
     ],
     "chance_liga-2223": [
       "4ME8s5RH",
@@ -505,30 +505,30 @@
       "Eq8cXb2L"
     ],
     "chance_liga-2526": [
-      "vaVrMgOi",
-      "WSOQWAxA",
-      "bFQIYW7c",
-      "hx4iIBNG",
-      "pzqWATFj",
-      "Eih0GkhT",
-      "pC0qKXh4",
-      "n5rcbjWp",
-      "v10k2aXI",
-      "SK1Q3C8N",
-      "KfbI5YwB",
-      "buA97f9b",
-      "O4AQ733s",
-      "6m2s4L26",
-      "AL8Y5sYg",
-      "hr719Gvn",
-      "SfIZUl7M",
-      "fVyHsSjS",
-      "6Nzezpq2",
-      "KhcEN6ad",
-      "Qkp0oAi3",
-      "MHw9qlMF",
-      "bw95PSUq",
-      "EFImx6Ek"
+      "jLwwmghR",
+      "xjkgu2jI",
+      "lGwwqpig",
+      "2LYIwkFD",
+      "8xMnxxv9",
+      "fFVhGfHk",
+      "GUJ1EYo2",
+      "d2fzTX0e",
+      "44FezG8L",
+      "2acrRBV7",
+      "rezVlFNE",
+      "0z1RUgWr",
+      "tC5J1e2d",
+      "fim6Pbf3",
+      "S4oENxPF",
+      "tlNWAauA",
+      "Mo7VCLAc",
+      "lEQv9wAM",
+      "Yo2B3HXq",
+      "OWvNLGgS",
+      "zi2B7QYH",
+      "UiKqkIIj",
+      "2POUfmkC",
+      "zwNxgRJO"
     ],
     "ekstraklasa-2223": [
       "KGgchU8S",
@@ -689,28 +689,26 @@
     "eredivisie-2526": [
       "KfJCUw6t",
       "dIueCdjC",
-      "WIwlzwu3",
-      "QuFqPCW1",
-      "UDLzRY1k",
-      "jN01CZnd",
-      "QHdSktOj",
-      "Ysz5WfvS",
-      "rccgEeIq",
-      "vqsdYG9F",
-      "QLISW3YA",
-      "fZ5de20T",
-      "QuZ6ponB",
-      "6wJ5n7Hb",
-      "IwEow3vo",
       "4rq3AzLO",
       "6BHKSHzg",
-      "6XcdQMa3",
-      "Snn5O0UF",
-      "UD7o4Wr1",
-      "ldRV91FM",
-      "tf6A2J7d",
-      "pSC14uwp",
-      "hUXMBNpA"
+      "INDcg6Ba",
+      "KnAEkOAO",
+      "xp8W7p9e",
+      "j9cHDzcE",
+      "Ac6v6Ow8",
+      "lKZrHln9",
+      "2kd24B23",
+      "xWScgof2",
+      "l6fA2kXF",
+      "AZNiFSGL",
+      "MgJFt8Ad",
+      "pYmJ0T1S",
+      "tIEN96vq",
+      "t4Zle7Pk",
+      "0QkYTUQj",
+      "SWsKiYIc",
+      "fqZzljIM",
+      "U1soueZi"
     ],
     "jupiler_league-2223": [
       "tn42sLXb",
@@ -791,30 +789,23 @@
       "fVoSMLQP"
     ],
     "jupiler_league-2526": [
-      "YF6RwKjJ",
-      "dhpqd16m",
-      "W8g7Rvio",
-      "hSDOAthn",
-      "A3zXpEZF",
-      "nT1cCgTj",
-      "C2JeFy2L",
-      "tQ9fjUSh",
-      "vZt9tE0K",
-      "2g3yX0TN",
-      "2wXOnz53",
-      "Q9gD1NrQ",
-      "Qk3JutM6",
-      "GpBRHF5T",
-      "23YEjw7U",
-      "O2tgkrqh",
-      "8Y4R9FPr",
-      "Ew82l8c5",
-      "vijgxzkI",
-      "bPGW8KMb",
-      "EgnsPiUg",
-      "2yMG2bIF",
-      "C6gqzcLc",
-      "WSq1mMD4"
+      "jNSx8xYH",
+      "MNCvaskm",
+      "ngd4cUDr",
+      "UmGncLJa",
+      "zT7KgnD7",
+      "fJaCe8re",
+      "SMf6Hk5E",
+      "2LKX2jjL",
+      "feHP4CL8",
+      "YTffWiFq",
+      "Uel3UVqd",
+      "GCCps9T1",
+      "OEX5liyS",
+      "fZukhZy3",
+      "GlUcjD6F",
+      "xb9OyEiM",
+      "EekNIA8D"
     ],
     "laliga-2223": [
       "lx5qBKi8",
@@ -895,30 +886,30 @@
       "IsfaLsYH"
     ],
     "laliga-2526": [
-      "Gt6nv08e",
-      "6VYvpjdE",
-      "6TgLPLAa",
-      "QXQotset",
-      "z9oxMwAO",
-      "O69fxvw8",
-      "CU0CRstm",
-      "vshTNauC",
-      "KES1xaf5",
-      "4SVXY4WF",
-      "UkiVEqup",
-      "GKUBRMOk",
-      "4tB6m4o9",
-      "xzJKP0g2",
-      "G6kwDN9d",
-      "WEXPzR13",
-      "0fPtXr1S",
-      "dvjotMwq",
-      "nmFfvLPh",
-      "2JLSaghT",
-      "657hGExA",
-      "zq4THRDE",
-      "8WSYepie",
-      "UoHsfOL7"
+      "0GKWFVOp",
+      "nkxpPZ1b",
+      "QHILO5jI",
+      "tWw0Li1N",
+      "84QhNDWA",
+      "Kpa4akN6",
+      "OhM4Smig",
+      "hCxoCS6C",
+      "OWpUFA7m",
+      "CEhnA6yP",
+      "hlfbLWqQ",
+      "2wYeU9Mt",
+      "KbvwElx0",
+      "WIPCQRL5",
+      "ChHBcTiJ",
+      "MyfFjoLh",
+      "d4kFLuv9",
+      "j57m3XNs",
+      "UTVX82f3",
+      "j72Tcxn2",
+      "UiEKabHk",
+      "2sUu7tPF",
+      "b9Nl5KgS",
+      "Gllooa2d"
     ],
     "liga_portugal-2223": [
       "8h8Hf4hQ",
@@ -999,30 +990,30 @@
       "KQn3BAo4"
     ],
     "liga_portugal-2526": [
-      "dIAeBSeD",
-      "rk1VN5uJ",
-      "OAN8KWYQ",
-      "r9qET9Bs",
-      "OO2sZVmK",
-      "zPcNPRA6",
-      "z3MnDlR0",
-      "GMsMRmtf",
-      "lYr60Bse",
-      "zksEbkC7",
-      "QiZGM1bc",
-      "SIfc2XCr",
-      "YcnVbb6j",
-      "Gt6b4KrT",
-      "MJSPKuT9",
-      "jcP0Mh4E",
-      "8G2j6tEG",
-      "re4uFAdl",
-      "OpvIo9XP",
-      "lSNdvRPa",
-      "MuM4x5fC",
-      "8WfNfnAt",
-      "UoqWhQvg",
-      "I7FDzqPO"
+      "Y3gOnIw8",
+      "Akf4q4lD",
+      "YuBydMGL",
+      "jmb5zllo",
+      "Chq0dVA4",
+      "4O17j0vq",
+      "6ethbith",
+      "SSuybrn9",
+      "zZhkzuf2",
+      "v7atx1Pk",
+      "Y7X8f9uH",
+      "jJW9oEdn",
+      "0fi0RABU",
+      "4SciTWtI",
+      "rulTYzDt",
+      "WEaqVhC5",
+      "CYKIqhRb",
+      "j5iyXEsg",
+      "bkJQsWeB",
+      "fHCZuAQN",
+      "Wvqz4GD6",
+      "QstS5xqf",
+      "vRNIEXRO",
+      "W0KAGgcC"
     ],
     "ligue_1-2223": [
       "W0ldfU30",
@@ -1103,30 +1094,25 @@
       "Y39DlFiR"
     ],
     "ligue_1-2526": [
-      "dUb1gXFi",
-      "U1XAkUcJ",
-      "WKGfctHP",
-      "0MufgCbf",
-      "Sj2QiKvm",
-      "WraslxvC",
-      "MyU2ijT6",
-      "OIeZkb9a",
-      "jXBFVTNp",
-      "ED38z4iM",
-      "hdxneYTs",
-      "OKAulHME",
-      "IsnywiED",
-      "8CShQDU7",
-      "MFhSvDq1",
-      "AyZM0f6K",
-      "EkkKtZEl",
-      "zaUpSZae",
-      "Q9jIkkFG",
-      "hdhAiBp4",
-      "MypRmTqT",
-      "xOQWfpid",
-      "jizcr77j",
-      "WAeWd6Mq"
+      "MahveGGF",
+      "EcXImY8k",
+      "xC0WV8sm",
+      "SKLUv4QH",
+      "jFQ5p8dt",
+      "EHeeQ4BO",
+      "px4vUnCa",
+      "OSODrnRh",
+      "6ihmSQtC",
+      "KfIMtQe5",
+      "lzAwwreU",
+      "AovUO9KD",
+      "8tr8yVJP",
+      "GneMDRRI",
+      "MPJQOizK",
+      "xYuMQVk1",
+      "Cfb5H9Sg",
+      "juAdJVcs",
+      "t6nDSiLl"
     ],
     "premier_league-2223": [
       "M1w8YmqE",
@@ -1207,30 +1193,30 @@
       "8xG7dqwn"
     ],
     "premier_league-2526": [
-      "bLP5yET8",
-      "WYNDZibL",
-      "IVe1QmL7",
-      "pxlmliDE",
-      "jJ4pUVLr",
-      "AoUBFW6k",
-      "rDsJDAy2",
-      "jcHwYvNG",
-      "t4sdnVsR",
-      "U7CL8Og5",
-      "n5KMyNNi",
-      "fBXzEJVp",
-      "UTmdL1wB",
-      "0lduPqvn",
-      "8EamNN8b",
-      "bm4x5tgU",
-      "dxqTvmz1",
-      "djO1gnkf",
-      "QVFIk4lJ",
-      "xAqy8o4m",
-      "42nywR4D",
-      "xzTRt95l",
-      "GtGge8Ks",
-      "hx84D7tQ"
+      "Kxy4K6zR",
+      "dpRRonU1",
+      "rw7M7TjL",
+      "OAseMS5E",
+      "lbnqyVFq",
+      "lrdmg9KU",
+      "xKSwcCx3",
+      "K24WdiL5",
+      "GUcueVkI",
+      "UyEecLWo",
+      "MqW2ea1b",
+      "dMruej7F",
+      "pQuhZ8pd",
+      "raKBgwWA",
+      "M7x6tWzP",
+      "CWHF0ZLt",
+      "YBkFXzhf",
+      "hSpkpEy0",
+      "Quqcrh6C",
+      "bTitnz7m",
+      "nkONThiJ",
+      "vPKFVEM6",
+      "Sp1AidqQ",
+      "Yo6ObDjg"
     ],
     "serie_a-2223": [
       "Q3DqQz7n",
@@ -1311,30 +1297,30 @@
       "foWUgRxA"
     ],
     "serie_a-2526": [
-      "zTZUXUXR",
-      "6mrEyDY2",
-      "Uke4nUnL",
-      "SQE9QnQ1",
-      "4UbUT0Fd",
-      "YN1eljI8",
-      "v1tMZj3F",
-      "Mmzqunue",
-      "QLtzs8Ar",
-      "b9eMZVoI",
-      "OW0cuzIt",
-      "jqhEyhH5",
-      "UkutjiWb",
-      "p6VnLWWO",
-      "fykVX9GU",
-      "ChXvNh2C",
-      "YL0i6Owf",
-      "G6Joa7WQ",
-      "0Yi82twJ",
-      "EHTQk3gD",
-      "Qecq8p9s",
-      "8tGw1T1E",
-      "EFbK9cpn",
-      "tOLCD6oK"
+      "Wr72kaOj",
+      "AZRy4bwp",
+      "Q1j59KFM",
+      "6LBvOJUF",
+      "UaOruI4E",
+      "Iwx5pDtf",
+      "UcNvcjQa",
+      "zyp6DBAt",
+      "AgjEtVuJ",
+      "OdGmeUfC",
+      "r1mEBkug",
+      "x0r04YXP",
+      "MXJWbCem",
+      "jizDriB6",
+      "dAEeg8PO",
+      "QRHiwdZQ",
+      "EToDHN6j",
+      "2mmlJzre",
+      "Mc3NXZdl",
+      "O2ycHEC7",
+      "S8TauRbc",
+      "0MR7w5T9",
+      "fNqtLdDr",
+      "IPdWVDR0"
     ],
     "super_league-2223": [
       "6LXlfPTg",
@@ -1415,30 +1401,26 @@
       "hUDomwEE"
     ],
     "super_league-2526": [
-      "xxNW0wrK",
-      "Y782eH5s",
-      "tYBAgezf",
-      "p26caQ6F",
-      "j1YUtIjl",
-      "AVUpwzjD",
-      "YXVxc065",
-      "nF8kOx54",
-      "xx3k1nx3",
-      "4YmNxxKc",
-      "AVjVzGlA",
-      "voDeu5Fq",
-      "prG3wqpd",
-      "zkOHnmN9",
-      "82MPpRiM",
-      "SOK9l9hc",
-      "6gSPkDZI",
-      "YaKBDGRP",
-      "YuUHiZ46",
-      "tID2I7Yr",
-      "lrHAGo3e",
-      "SEXhgI5U",
-      "KlUpevyI",
-      "d8KIEPX7"
+      "p0xM4TpR",
+      "xzZD6kGE",
+      "b32eJSaK",
+      "Yuinhj1L",
+      "UBxInUOr",
+      "lhHrYU9k",
+      "dvdRrnO7",
+      "xEcwfCW8",
+      "lEhJp8ge",
+      "2qs3hae4",
+      "z9NLuMBb",
+      "UVrefLQi",
+      "EN08WHYp",
+      "rZQTw0tB",
+      "bBzCjwQG",
+      "4lFxxvBN",
+      "OUg3NvdU",
+      "4EbTA1CO",
+      "vsUCsrsn",
+      "0j9wTrSh"
     ],
     "super_lig-2223": [
       "nH4FwnTO",
@@ -1519,30 +1501,25 @@
       "YH62HjSh"
     ],
     "super_lig-2526": [
-      "KU4P8hsm",
-      "6Nl9620J",
-      "lnEgEEJP",
-      "YiBu5AtC",
-      "KrpbNidt",
-      "bco18OV6",
-      "UJ4l3lBO",
-      "0vDX6WBa",
-      "veVaAp1f",
-      "6sXiC6Ws",
-      "hv7Ic7Hl",
-      "QPjxIy33",
-      "bwkpGFXF",
-      "KjbZgPGD",
-      "byAQeon1",
-      "xjerdftp",
-      "OtQNHmQH",
-      "zLgtzVun",
-      "2XpcWnuB",
-      "tIdlY8Ab",
-      "dfOVFRfU",
-      "8WCUDvPq",
-      "4b6wCIgd",
-      "tbY6LVQh"
+      "vB1kcGqR",
+      "GlYt3gzo",
+      "xzefCcDb",
+      "QeRyfGcU",
+      "x0vooLEa",
+      "GK6oEJrn",
+      "fiw41tat",
+      "dGZKcbb5",
+      "UTXSexTH",
+      "2HtCaKTh",
+      "jwDgswEO",
+      "rD9oqaqC",
+      "ruWIsn87",
+      "4ntwmspm",
+      "MPsAq8we",
+      "6gVxo0c2",
+      "GSv2oU8r",
+      "AoO45k0E",
+      "KxXUnMSk"
     ]
   },
   "kickoff_histogram_by_dataset": {
@@ -1562,9 +1539,9 @@
       "present_unix_ok": 0
     },
     "bundesliga-2526": {
-      "absent_key": 143,
+      "absent_key": 32,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 6
+      "present_unix_ok": 117
     },
     "carabao_cup-2223": {
       "absent_key": 0,
@@ -1602,9 +1579,9 @@
       "present_unix_ok": 0
     },
     "chance_liga-2526": {
-      "absent_key": 124,
+      "absent_key": 40,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 84
     },
     "copa_del_rey-2223": {
       "absent_key": 0,
@@ -1722,9 +1699,9 @@
       "present_unix_ok": 0
     },
     "eredivisie-2526": {
-      "absent_key": 136,
+      "absent_key": 22,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 114
     },
     "fa_cup-2223": {
       "absent_key": 0,
@@ -1762,9 +1739,9 @@
       "present_unix_ok": 0
     },
     "jupiler_league-2526": {
-      "absent_key": 136,
+      "absent_key": 17,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 5
+      "present_unix_ok": 124
     },
     "knvb_beker-2223": {
       "absent_key": 0,
@@ -1802,9 +1779,9 @@
       "present_unix_ok": 0
     },
     "laliga-2526": {
-      "absent_key": 171,
+      "absent_key": 50,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 5
+      "present_unix_ok": 126
     },
     "liga_europy-2223": {
       "absent_key": 0,
@@ -1882,9 +1859,9 @@
       "present_unix_ok": 0
     },
     "liga_portugal-2526": {
-      "absent_key": 154,
+      "absent_key": 40,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 0
+      "present_unix_ok": 114
     },
     "ligue_1-2223": {
       "absent_key": 109,
@@ -1902,9 +1879,9 @@
       "present_unix_ok": 0
     },
     "ligue_1-2526": {
-      "absent_key": 133,
+      "absent_key": 19,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 1
+      "present_unix_ok": 115
     },
     "premier_league-2223": {
       "absent_key": 103,
@@ -1922,9 +1899,9 @@
       "present_unix_ok": 0
     },
     "premier_league-2526": {
-      "absent_key": 163,
+      "absent_key": 44,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 5
+      "present_unix_ok": 124
     },
     "puchar_belgii-2223": {
       "absent_key": 0,
@@ -2042,9 +2019,9 @@
       "present_unix_ok": 0
     },
     "serie_a-2526": {
-      "absent_key": 164,
+      "absent_key": 43,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 4
+      "present_unix_ok": 125
     },
     "super_league-2223": {
       "absent_key": 105,
@@ -2062,9 +2039,9 @@
       "present_unix_ok": 0
     },
     "super_league-2526": {
-      "absent_key": 133,
+      "absent_key": 20,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 3
+      "present_unix_ok": 116
     },
     "super_lig-2223": {
       "absent_key": 108,
@@ -2082,9 +2059,9 @@
       "present_unix_ok": 0
     },
     "super_lig-2526": {
-      "absent_key": 123,
+      "absent_key": 19,
       "present_no_valid_unix": 0,
-      "present_unix_ok": 9
+      "present_unix_ok": 113
     },
     "taca_de_portugal-2223": {
       "absent_key": 0,
@@ -3244,7 +3221,7 @@
   "notes": "skipped_no_row_build_semantics matches build_integration_supplement counter (meta present but lookup_fd_row returned None, including unix_ts is None).",
   "lookup_miss_sample_meta": {
     "preset": "lookup_miss_valid_unix",
-    "population": 1020,
+    "population": 1736,
     "sample_size": 0,
     "seed": 42,
     "stratification": "proportional_largest_remainder",
@@ -3257,11 +3234,11 @@
   "lookup_miss_category_histogram_sample": {},
   "lookup_miss_category_histogram_population": {
     "csv_index_empty": 840,
-    "no_ordered_hit_after_pmR": 180
+    "no_ordered_hit_after_pmR": 896
   },
   "lookup_miss_category_histogram_by_dataset": {
     "bundesliga-2526": {
-      "no_ordered_hit_after_pmR": 6
+      "no_ordered_hit_after_pmR": 116
     },
     "carabao_cup-2223": {
       "csv_index_empty": 93
@@ -3275,8 +3252,14 @@
     "carabao_cup-2526": {
       "csv_index_empty": 93
     },
+    "chance_liga-2526": {
+      "no_ordered_hit_after_pmR": 84
+    },
     "ekstraklasa-2526": {
       "no_ordered_hit_after_pmR": 142
+    },
+    "eredivisie-2526": {
+      "no_ordered_hit_after_pmR": 64
     },
     "fa_cup-2223": {
       "csv_index_empty": 106
@@ -3291,26 +3274,29 @@
       "csv_index_empty": 130
     },
     "jupiler_league-2526": {
-      "no_ordered_hit_after_pmR": 5
+      "no_ordered_hit_after_pmR": 92
     },
     "laliga-2526": {
-      "no_ordered_hit_after_pmR": 5
+      "no_ordered_hit_after_pmR": 86
+    },
+    "liga_portugal-2526": {
+      "no_ordered_hit_after_pmR": 58
     },
     "ligue_1-2526": {
-      "no_ordered_hit_after_pmR": 1
+      "no_ordered_hit_after_pmR": 40
     },
     "premier_league-2526": {
-      "no_ordered_hit_after_pmR": 5
+      "no_ordered_hit_after_pmR": 56
     },
     "serie_a-2526": {
-      "no_ordered_hit_after_pmR": 4
+      "no_ordered_hit_after_pmR": 50
     },
     "super_league-2526": {
-      "no_ordered_hit_after_pmR": 3
+      "no_ordered_hit_after_pmR": 70
     },
     "super_lig-2526": {
-      "no_ordered_hit_after_pmR": 9
+      "no_ordered_hit_after_pmR": 38
     }
   },
-  "baseline_bottleneck_hint": "nigdy próby join: 5717/12141 (47.1%) — zakres CSV/unsupported; w scope join brak wpisu meta_ix: skipped_no_meta=5387; meta jest, brak dopasowania CSV: skipped_no_row~=1020"
+  "baseline_bottleneck_hint": "nigdy próby join: 5717/12141 (47.1%) — zakres CSV/unsupported; w scope join brak wpisu meta_ix: skipped_no_meta=4153; meta jest, brak dopasowania CSV: skipped_no_row~=1736"
 }

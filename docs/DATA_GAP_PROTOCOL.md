@@ -42,10 +42,21 @@ Po świeżym regressie (`-F`) użyj [meta_gap_event_id_sample.py](../scripts/met
 
 ## Etap 2 — Akcje (skrót)
 
-- **Meta (A):** [download_flashscore_integration_feeds.py](../scripts/download_flashscore_integration_feeds.py), priorytet w [flashscore_list_feed_manifest.json](../data/integrated/flashscore_list_feed_manifest.json), [slice_flashscore_list_feed.py](../scripts/slice_flashscore_list_feed.py) (**sprawdź `priority`/`wildcard_priority`**), augmentacja HTML w [flashscore_integration_feeds.py](../src/football_ai/integration/flashscore_integration_feeds.py).
+- **Meta (A):** [download_flashscore_integration_feeds.py](../scripts/download_flashscore_integration_feeds.py), priorytet w [flashscore_list_feed_manifest.json](../data/integrated/flashscore_list_feed_manifest.json), [slice_flashscore_list_feed.py](../scripts/slice_flashscore_list_feed.py) (**sprawdź `priority`/`wildcard_priority`** — slice z pliku już w unii **nie** dodaje nowych `event_id`), augmentacja HTML w [flashscore_integration_feeds.py](../src/football_ai/integration/flashscore_integration_feeds.py); **domestic `/wyniki/`** (Tier‑1 gdy mega-list ma ~kilka wiersów ligi): [download_flashscore_domestic_results_seeds.py](../scripts/download_flashscore_domestic_results_seeds.py) → `data/raw/flashscore/seed_results/*_wyniki.html` (wzorzec jak UEFA: [download_flashscore_uefa_results_seeds.py](../scripts/download_flashscore_uefa_results_seeds.py)).
 - **CSV (B):** puchary — [download_engsoccerdata_cups.py](../scripts/download_engsoccerdata_cups.py); MMZ bez ślepego overlay — [FOOTBALL_DATA_MMZ_OVERLAY_NOTES.txt](../data/integrated/FOOTBALL_DATA_MMZ_OVERLAY_NOTES.txt); ligi bez MMZ — mirror / `--footballcsv-cache-fallback` na supplemencie.
 - **Enrichment vs diag (C):** patrz `join_would_succeed_count` / `skipped_no_row`; coverage po supplemencie.
 - **RAW kubków (D):** [retry_cup_wyniki_backfill.py](../scripts/retry_cup_wyniki_backfill.py), [harvest_cups.py](../scripts/harvest_cups.py) — przy kubitach częściej przed / równolegle z A.
+
+---
+
+## Utrzymanie (klon / CI)
+
+`data/raw/` jest poza Gitem. Przed testami lub diag zależnymi od RAW:
+
+1. `python scripts/download_flashscore_integration_feeds.py` (mega-listy z manifestu).
+2. Opcjonalnie seedy meta: `python scripts/download_flashscore_uefa_results_seeds.py`, `python scripts/download_flashscore_domestic_results_seeds.py --all-tier1 --season 2526` (lub `--league laliga --season 2526`).
+
+Bez kroku 1 testy oparte na `feeds/**/*.txt` mogą przechodzić na pustym drzewie lub na nieaktualnym snapshotcie lokalnym.
 
 ---
 

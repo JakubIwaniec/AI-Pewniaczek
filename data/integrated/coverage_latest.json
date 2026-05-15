@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T12:31:14Z",
+  "generated_at": "2026-05-15T19:02:37Z",
   "schema_version": "2",
   "raw_gap_stats": {
     "events_total": 12141,
@@ -10,7 +10,7 @@
     "notes": "df_sui_missing counts events where RAW sui absent; supplement.sqlite does NOT change these checks."
   },
   "supplement_totals_seen_on_any_event_iteration": {
-    "events_touching_fallback_fd_counts_loops_events": 34,
+    "events_touching_fallback_fd_counts_loops_events": 535,
     "events_touching_fallback_of_counts_loops_events": 93,
     "events_dual_fallback_fd_and_of": 0,
     "dual_sample_pairs_dataset_eid": [],
@@ -425,11 +425,11 @@
     "excluded": "UEFA (liga_* manifest keys): no bundled football-data MMZ analogue; overlays may still target cups via the JSON map after manual URL validation."
   },
   "supplement_match_identity": {
-    "rows_with_nonempty_match_uid": 127,
-    "distinct_match_uid": 127,
+    "rows_with_nonempty_match_uid": 628,
+    "distinct_match_uid": 628,
     "match_uids_with_both_fd_and_openfootball": 0,
-    "rows_with_nonempty_fixture_uid": 127,
-    "distinct_fixture_uid": 127,
+    "rows_with_nonempty_fixture_uid": 628,
+    "distinct_fixture_uid": 628,
     "fixture_uids_collision_distinct_dataset_count_gt1": 0,
     "fixture_uids_domestic_non_uefa_dataset_with_fd_and_openfootball": 0,
     "match_uid_dual_metric_note": "match_uid includes dataset_label in the hash (see match_identity.compute_match_uid). UEFA supplement rows use liga_mistrzow-* etc.; football-data rows use premier_league-* etc. The pipeline never writes both sources for the same dataset_label, so match_uids_with_both_fd_and_openfootball is expected to be 0; it is not a global integration KPI.",
